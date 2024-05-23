@@ -1,6 +1,9 @@
 site_name: Neko Note
+site_author: Core2002
 repo_url: https://github.com/Core2002/neko_note
 repo_name: Core2002/neko_note
+copyright: Copyright &copy; 2018 Core2002
+site_description: The markdown note book.
 theme:
   name: material
   features:
@@ -31,3 +34,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.tabbed:
       alternate_style: true
+extra:
+  generator: false
+  
