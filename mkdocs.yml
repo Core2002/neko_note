@@ -1,4 +1,6 @@
 site_name: Neko Note
+repo_url: https://github.com/Core2002/neko_note
+repo_name: Core2002/neko_note
 theme:
   name: material
   features:
