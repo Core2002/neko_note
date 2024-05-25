@@ -913,8 +913,6 @@ Maven开发镜像 <https://maven.fastmirror.net>
 
 ### 记忆碎片
 
-免费梯子 <https://raw.fastgit.org/freefq/free/master/v2>
-
 adduser xrdp ssl-cert
 
 X79 X66
