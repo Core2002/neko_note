@@ -14,11 +14,67 @@
 
 > 来自 <https://www.runoob.com/docker/debian-docker-install.html>
 
+若需要使用GPU，需安装 `container-toolkit` -> [技术文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation)
+
+Installing with Apt
+
+```bash
+# Configure the production repository:
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+# Optionally, configure the repository to use experimental packages:
+sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+# Update the packages list from the repository:
+sudo apt-get update
+
+# Install the NVIDIA Container Toolkit packages:
+sudo apt-get install -y nvidia-container-toolkit
+```
+
+Installing with Zypper
+
+```bash
+# Configure the production repository:
+sudo zypper ar https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
+
+# Optionally, configure the repository to use experimental packages:
+sudo zypper modifyrepo --enable nvidia-container-toolkit-experimental
+
+# Install the NVIDIA Container Toolkit packages:
+sudo zypper --gpg-auto-import-keys install -y nvidia-container-toolkit
+```
+
+Configuring Docker
+
+```bash
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+```
+
 ### Docker 自动重启容器
 
 ```bash
 docker run -d --restart=always
 docker container update --restart=always <容器名字>
+```
+
+### Ollama 本地部署大语言模型
+
+[可用模型](https://ollama.com/library)
+
+```bash
+docker run -d \
+  -e OLLAMA_HOST="0.0.0.0" \
+  -e OLLAMA_ORIGINS="*" \
+  --gpus=all \
+  -v ollama:/root/.ollama \
+  -p 11434:11434 \
+  --name ollama \
+  ollama/ollama
 ```
 
 ### Cocechat Server web聊天服务器
