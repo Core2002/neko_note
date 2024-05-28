@@ -382,6 +382,12 @@ To automatically install & run wg-easy, simply run:
 
 ## 常规操作
 
+### Android 删除应用锁
+
+```bash
+rm /data/system/access_control.key
+```
+
 ### Linux 修改主机名
 
 ```bash
