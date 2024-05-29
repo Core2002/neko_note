@@ -5,29 +5,49 @@
 ### Maven 打包依赖并设置主类
 
 ```xml
-<plugin>
-  <artifactId>maven-assembly-plugin</artifactId> 
-  <version>3.0.0</version> 
-  <configuration> 
-    <archive> 
-      <manifest> 
-        <mainClass>fun.fifu.Neko</mainClass> 
-      </manifest> 
-    </archive> 
-    <descriptorRefs> 
-      <descriptorRef>jar-with-dependencies</descriptorRef> 
-    </descriptorRefs> 
-  </configuration> 
-  <executions> 
-    <execution> 
-      <id>make-assembly</id> <!-- this is used for inheritance merges --> 
-      <phase>package</phase> <!-- bind to the packaging phase --> 
-      <goals> 
-        <goal>single</goal> 
-      </goals> 
-    </execution> 
-  </executions> 
-</plugin> 
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>unpack-dependencies</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                        <includeArtifactIds>mosslib</includeArtifactIds>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.7.1</version>
+            <configuration>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                    <manifest>
+                        <mainClass>fun.fifu.Neko</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>make-assembly</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 ```
 
 ### Maven下载源码
