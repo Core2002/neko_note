@@ -77,6 +77,22 @@ docker run -d \
   ollama/ollama
 ```
 
+### MiniConda3 Jupyter
+
+```bash
+docker run -i -t \
+  -p 8888:8888 \
+  --gpus=all \
+  continuumio/miniconda3 /bin/bash \
+  -c "/opt/conda/bin/conda install jupyter -y --quiet && \
+  /opt/conda/bin/jupyter notebook \
+  --notebook-dir=/root \
+  --ip='*' \
+  --port=8888 \
+  --no-browser \
+  --allow-root"
+```
+
 ### Cocechat Server web聊天服务器
 
 ```bash
