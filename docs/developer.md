@@ -6,27 +6,27 @@
 
 ```xml
 <plugin>
-  <artifactId>maven-assembly-plugin</artifactId> 
-  <version>3.0.0</version> 
-  <configuration> 
-    <archive> 
-      <manifest> 
-        <mainClass>fun.fifu.Neko</mainClass> 
-      </manifest> 
-    </archive> 
-    <descriptorRefs> 
-      <descriptorRef>jar-with-dependencies</descriptorRef> 
-    </descriptorRefs> 
-  </configuration> 
-  <executions> 
-    <execution> 
-      <id>make-assembly</id> <!-- this is used for inheritance merges --> 
-      <phase>package</phase> <!-- bind to the packaging phase --> 
-      <goals> 
-        <goal>single</goal> 
-      </goals> 
-    </execution> 
-  </executions> 
+  <artifactId>maven-assembly-plugin</artifactId> 
+  <version>3.0.0</version> 
+  <configuration> 
+    <archive> 
+      <manifest> 
+        <mainClass>fun.fifu.Neko</mainClass> 
+      </manifest> 
+    </archive> 
+    <descriptorRefs> 
+      <descriptorRef>jar-with-dependencies</descriptorRef> 
+    </descriptorRefs> 
+  </configuration> 
+  <executions> 
+    <execution> 
+      <id>make-assembly</id> <!-- this is used for inheritance merges --> 
+      <phase>package</phase> <!-- bind to the packaging phase --> 
+      <goals> 
+        <goal>single</goal> 
+      </goals> 
+    </execution> 
+  </executions> 
 </plugin> 
 ```
 
@@ -40,24 +40,24 @@ mvn dependency:resolve -Dclassifier=sources
 
 ```xml
 <repository> 
-    <id>aliyun maven</id> 
-    <url>http://maven.aliyun.com/nexus/content/groups/public/</url> 
+    <id>aliyun maven</id> 
+    <url>http://maven.aliyun.com/nexus/content/groups/public/</url> 
 </repository> 
 <repository> 
-    <id>minecraft</id> 
-    <url>https://lss233.littleservice.cn/repositories/minecraft</url> 
+    <id>minecraft</id> 
+    <url>https://lss233.littleservice.cn/repositories/minecraft</url> 
 </repository> 
 <repository> 
-    <id>spigot-repo</id> 
-    <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url> 
+    <id>spigot-repo</id> 
+    <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url> 
 </repository> 
 <repository> 
-    <id>papermc</id> 
-    <url>https://papermc.io/repo/repository/maven-public/</url> 
+    <id>papermc</id> 
+    <url>https://papermc.io/repo/repository/maven-public/</url> 
 </repository> 
 <repository> 
-    <id>jitpack.io</id> 
-    <url>https://jitpack.io</url> 
+    <id>jitpack.io</id> 
+    <url>https://jitpack.io</url> 
 </repository> 
 ```
 
@@ -281,8 +281,8 @@ s.forEachRemaining(System.out::print);
 ```cmd
 @echo off 
 for /r %%f in (*.csv) do ( 
-    echo %%f 
-    mongoimport -d <数据库> -c <容器> --file "%%f" --type csv --headerline 
+    echo %%f 
+    mongoimport -d <数据库> -c <容器> --file "%%f" --type csv --headerline 
 ) 
 pause 
 ```
@@ -293,33 +293,33 @@ pause
 
 ```text
 1、导出工具：mongoexport 
-    1、概念： 
-        mongoDB中的mongoexport工具可以把一个collection导出成JSON格式或CSV格式的文件。可以通过参数指定导出的数据项，也可以根据指定的条件导出数据。 
-    2、语法： 
-        mongoexport -d dbname -c collectionname -o file --type json/csv -f field 
-        参数说明： 
-            -d ：数据库名 
-            -c ：collection名 
-            -o ：输出的文件名 
-            --type ： 输出的格式，默认为json 
-            -f ：输出的字段，如果-type为csv，则需要加上-f "字段名" 
-    3、示例： 
-        sudo mongoexport -d mongotest -c users -o /home/python/Desktop/mongoDB/users.json --type json -f  "_id,user_id,user_name,age,status" 
-  
+    1、概念： 
+        mongoDB中的mongoexport工具可以把一个collection导出成JSON格式或CSV格式的文件。可以通过参数指定导出的数据项，也可以根据指定的条件导出数据。 
+    2、语法： 
+        mongoexport -d dbname -c collectionname -o file --type json/csv -f field 
+        参数说明： 
+            -d ：数据库名 
+            -c ：collection名 
+            -o ：输出的文件名 
+            --type ： 输出的格式，默认为json 
+            -f ：输出的字段，如果-type为csv，则需要加上-f "字段名" 
+    3、示例： 
+        sudo mongoexport -d mongotest -c users -o /home/python/Desktop/mongoDB/users.json --type json -f  "_id,user_id,user_name,age,status" 
+  
 2、数据导入：mongoimport 
-    1、语法： 
-        mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field 
-        参数说明： 
-            -d ：数据库名 
-            -c ：collection名 
-            --type ：导入的格式默认json 
-            -f ：导入的字段名 
-            --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段 
-            --file ：要导入的文件 
-  
-    2、示例： 
-        sudo mongoimport -d mongotest -c users --file /home/mongodump/articles.json --type json 
-  
+    1、语法： 
+        mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field 
+        参数说明： 
+            -d ：数据库名 
+            -c ：collection名 
+            --type ：导入的格式默认json 
+            -f ：导入的字段名 
+            --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段 
+            --file ：要导入的文件 
+  
+    2、示例： 
+        sudo mongoimport -d mongotest -c users --file /home/mongodump/articles.json --type json 
+  
 ```
 
 > 来自 <https://www.cnblogs.com/qingtianyu2015/p/5968400.html>  
@@ -328,28 +328,28 @@ pause
 
 ```text
 1、MongoDB数据库备份 
-    1、语法： 
-        mongodump -h dbhost -d dbname -o dbdirectory 
-        参数说明： 
-            -h： MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017 
-            -d： 需要备份的数据库实例，例如：test 
-            -o： 备份的数据存放位置，例如：/home/mongodump/，当然该目录需要提前建立，这个目录里面存放该数据库实例的备份数据。 
-    2、实例： 
-        sudo rm -rf /home/momgodump/ 
-        sudo mkdir -p /home/momgodump 
-        sudo mongodump -h 192.168.17.129:27017 -d itcast -o /home/mongodump/ 
-        - 
+    1、语法： 
+        mongodump -h dbhost -d dbname -o dbdirectory 
+        参数说明： 
+            -h： MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017 
+            -d： 需要备份的数据库实例，例如：test 
+            -o： 备份的数据存放位置，例如：/home/mongodump/，当然该目录需要提前建立，这个目录里面存放该数据库实例的备份数据。 
+    2、实例： 
+        sudo rm -rf /home/momgodump/ 
+        sudo mkdir -p /home/momgodump 
+        sudo mongodump -h 192.168.17.129:27017 -d itcast -o /home/mongodump/ 
+        - 
 2、MongoDB数据库恢复 
-    1、语法： 
-        mongorestore -h dbhost -d dbname --dir dbdirectory 
-  
-        参数或名： 
-            -h： MongoDB所在服务器地址 
-            -d： 需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如test2 
-            --dir： 备份数据所在位置，例如：/home/mongodump/itcast/ 
-            --drop： 恢复的时候，先删除当前数据，然后恢复备份的数据。就是说，恢复后，备份后添加修改的数据都会被删除，慎用！ 
-    2、实例： 
-    mongorestore -h 192.168.17.129:27017 -d itcast_restore --dir /home/mongodump/itcast/ 
+    1、语法： 
+        mongorestore -h dbhost -d dbname --dir dbdirectory 
+  
+        参数或名： 
+            -h： MongoDB所在服务器地址 
+            -d： 需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如test2 
+            --dir： 备份数据所在位置，例如：/home/mongodump/itcast/ 
+            --drop： 恢复的时候，先删除当前数据，然后恢复备份的数据。就是说，恢复后，备份后添加修改的数据都会被删除，慎用！ 
+    2、实例： 
+    mongorestore -h 192.168.17.129:27017 -d itcast_restore --dir /home/mongodump/itcast/ 
  
 
 ```
@@ -358,40 +358,40 @@ pause
 
 ```text
 Overview 
-Use this tutorial to install MongoDB 6.0 Community Edition using the apt package manager. 
+Use this tutorial to install MongoDB 6.0 Community Edition using the apt package manager. 
 MongoDB Version 
-This tutorial installs MongoDB 6.0 Community Edition. To install a different version of MongoDB Community, use the version drop-down menu in the upper-left corner of this page to select the documentation for that version. 
+This tutorial installs MongoDB 6.0 Community Edition. To install a different version of MongoDB Community, use the version drop-down menu in the upper-left corner of this page to select the documentation for that version. 
 Considerations 
 Platform Support 
-MongoDB 6.0 Community Edition supports the following 64-bit Debian releases on x86_64 architecture: 
+MongoDB 6.0 Community Edition supports the following 64-bit Debian releases on x86_64 architecture: 
     Debian 11 "Bullseye" 
     Debian 10 "Buster" 
     Debian 9 "Stretch" 
 MongoDB only supports the 64-bit versions of these platforms. 
-See Platform Support for more information. 
+See Platform Support for more information. 
 Production Notes 
-Before deploying MongoDB in a production environment, consider the Production Notes document which offers performance considerations and configuration recommendations for production MongoDB deployments. 
+Before deploying MongoDB in a production environment, consider the Production Notes document which offers performance considerations and configuration recommendations for production MongoDB deployments. 
 Official MongoDB Packages 
-To install MongoDB Community on your Debian system, these instructions will use the official mongodb-org package, which is maintained and supported by MongoDB Inc. The official mongodb-org package always contains the latest version of MongoDB, and is available from its own dedicated repo. 
+To install MongoDB Community on your Debian system, these instructions will use the official mongodb-org package, which is maintained and supported by MongoDB Inc. The official mongodb-org package always contains the latest version of MongoDB, and is available from its own dedicated repo. 
 IMPORTANT 
-The mongodb package provided by Debian is not maintained by MongoDB Inc. and conflicts with the official mongodb-org package. If you have already installed the mongodb package on your Debian system, you must first uninstall the mongodb package before proceeding with these instructions. 
-See MongoDB Community Edition Packages for the complete list of official packages. 
+The mongodb package provided by Debian is not maintained by MongoDB Inc. and conflicts with the official mongodb-org package. If you have already installed the mongodb package on your Debian system, you must first uninstall the mongodb package before proceeding with these instructions. 
+See MongoDB Community Edition Packages for the complete list of official packages. 
  
 Install MongoDB Community Edition 
-Follow these steps to install MongoDB Community Edition using the apt package manager. 
+Follow these steps to install MongoDB Community Edition using the apt package manager. 
 1 .Import the public key used by the package management system. 
-From a terminal, issue the following command to import the MongoDB public GPG Key from  https://www.mongodb.org/static/pgp/server-6.0.asc: 
+From a terminal, issue the following command to import the MongoDB public GPG Key from  https://www.mongodb.org/static/pgp/server-6.0.asc: 
  
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add - 
-The operation should respond with an OK. 
-However, if you receive an error indicating that gnupg is not installed, you can: 
-    Install gnupg and its required libraries using the following command: 
+The operation should respond with an OK. 
+However, if you receive an error indicating that gnupg is not installed, you can: 
+    Install gnupg and its required libraries using the following command: 
      
 sudo apt-get install gnupg 
     Once installed, retry importing the key: 
      
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add - 
-2 .Create a /etc/apt/sources.list.d/mongodb-org-6.0.list file for MongoDB. 
+2 .Create a /etc/apt/sources.list.d/mongodb-org-6.0.list file for MongoDB. 
 Create the list file using the command appropriate for your version of Debian: 
 Debian 11 "Bullseye" 
 Debian 10 "Buster" 
@@ -409,7 +409,7 @@ Install a specific release of MongoDB.
 To install the latest stable version, issue the following 
  
 sudo apt-get install -y mongodb-org 
-Optional. Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available. To prevent unintended upgrades, you can pin the package at the currently installed version: 
+Optional. Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available. To prevent unintended upgrades, you can pin the package at the currently installed version: 
  
 echo"mongodb-org hold"| sudo dpkg --set-selections 
 echo"mongodb-org-database hold"| sudo dpkg --set-selections 
@@ -419,31 +419,31 @@ echo"mongodb-org-mongos hold"| sudo dpkg --set-selections
 echo"mongodb-org-tools hold"| sudo dpkg --set-selections 
 Run MongoDB Community Edition 
 ulimit Considerations 
-Most Unix-like operating systems limit the system resources that a process may use. These limits may negatively impact MongoDB operation, and should be adjusted. See UNIX ulimit Settings for the recommended settings for your platform. 
+Most Unix-like operating systems limit the system resources that a process may use. These limits may negatively impact MongoDB operation, and should be adjusted. See UNIX ulimit Settings for the recommended settings for your platform. 
 NOTE 
-Starting in MongoDB 4.4, a startup error is generated if the ulimit value for number of open files is under 64000. 
+Starting in MongoDB 4.4, a startup error is generated if the ulimit value for number of open files is under 64000. 
 Directories 
 By default, a MongoDB instance stores: 
-    its data files in /var/lib/mongodb 
-    its log files in /var/log/mongodb 
-If you installed via the package manager, these default directories are created during the installation.If you installed manually by downloading the tarballs, you can create the directories using mkdir -p <directory> or sudo mkdir -p <directory> depending on the user that will run MongoDB. (See your linux man pages for information on mkdir and sudo.)By default, MongoDB runs using the mongodb user account. If you change the user that runs the MongoDB process, you must also modify the permission to the /var/lib/mongodb and /var/log/mongodb directories to give this user access to these directories.To specify a different log file directory and data file directory, edit the systemLog.path and storage.dbPath settings in the /etc/mongod.conf. Ensure that the user running MongoDB has access to these directories. 
+    its data files in /var/lib/mongodb 
+    its log files in /var/log/mongodb 
+If you installed via the package manager, these default directories are created during the installation.If you installed manually by downloading the tarballs, you can create the directories using mkdir -p <directory> or sudo mkdir -p <directory> depending on the user that will run MongoDB. (See your linux man pages for information on mkdir and sudo.)By default, MongoDB runs using the mongodb user account. If you change the user that runs the MongoDB process, you must also modify the permission to the /var/lib/mongodb and /var/log/mongodb directories to give this user access to these directories.To specify a different log file directory and data file directory, edit the systemLog.path and storage.dbPath settings in the /etc/mongod.conf. Ensure that the user running MongoDB has access to these directories. 
 Procedure 
-Follow these steps to run MongoDB Community Edition on your system. These instructions assume that you are using the official mongodb-org package -- not the unofficial mongodb package provided by Debian -- and are using the default settings. 
+Follow these steps to run MongoDB Community Edition on your system. These instructions assume that you are using the official mongodb-org package -- not the unofficial mongodb package provided by Debian -- and are using the default settings. 
 Init System 
-To run and manage your mongod process, you will be using your operating system's built-in init system. Recent versions of Linux tend to use systemd (which uses the systemctl command), while older versions of Linux tend to use System V init (which uses the service command). 
+To run and manage your mongod process, you will be using your operating system's built-in init system. Recent versions of Linux tend to use systemd (which uses the systemctl command), while older versions of Linux tend to use System V init (which uses the service command). 
 If you are unsure which init system your platform uses, run the following command: 
  
 ps --no-headers -o comm1 
 Then select the appropriate tab below based on the result: 
-    systemd - select the systemd (systemctl) tab below. 
-    init - select the System V Init (service) tab below. 
+    systemd - select the systemd (systemctl) tab below. 
+    init - select the System V Init (service) tab below. 
 systemd (systemctl) 
 System V Init (service) 
 1 .Start MongoDB. 
-You can start the mongod process by issuing the following command: 
+You can start the mongod process by issuing the following command: 
  
 sudo systemctl start mongod 
-If you receive an error similar to the following when starting mongod: 
+If you receive an error similar to the following when starting mongod: 
 Failed to start mongod.service: Unit mongod.service not found. 
 Run the following command first: 
  
@@ -456,26 +456,26 @@ You can optionally ensure that MongoDB will start following a system reboot by i
  
 sudo systemctl enable mongod 
 3 .Stop MongoDB. 
-As needed, you can stop the mongod process by issuing the following command: 
+As needed, you can stop the mongod process by issuing the following command: 
  
 sudo systemctl stop mongod 
 4 .Restart MongoDB. 
-You can restart the mongod process by issuing the following command: 
+You can restart the mongod process by issuing the following command: 
  
 sudo systemctl restart mongod 
-You can follow the state of the process for errors or important messages by watching the output in the /var/log/mongodb/mongod.log file. 
+You can follow the state of the process for errors or important messages by watching the output in the /var/log/mongodb/mongod.log file. 
 5 .Begin using MongoDB. 
-Start a mongosh session on the same host machine as the mongod. You can run mongosh without any command-line options to connect to a mongod that is running on your localhost with default port 27017. 
+Start a mongosh session on the same host machine as the mongod. You can run mongosh without any command-line options to connect to a mongod that is running on your localhost with default port 27017. 
  
 mongosh 
-For more information on connecting using mongosh, such as to connect to a mongod instance running on a different host and/or port, see the mongosh documentation. 
-To help you start using MongoDB, MongoDB provides Getting Started Guides in various driver editions. For the driver documentation, see Start Developing with MongoDB. 
+For more information on connecting using mongosh, such as to connect to a mongod instance running on a different host and/or port, see the mongosh documentation. 
+To help you start using MongoDB, MongoDB provides Getting Started Guides in various driver editions. For the driver documentation, see Start Developing with MongoDB. 
 Uninstall MongoDB Community Edition 
 To completely remove MongoDB from a system, you must remove the MongoDB applications themselves, the configuration files, and any directories containing data and logs. The following section guides you through the necessary steps. 
 WARNING 
-This process will completely remove MongoDB, its configuration, and all databases. This process is not reversible, so ensure that all of your configuration and data is backed up before proceeding. 
+This process will completely remove MongoDB, its configuration, and all databases. This process is not reversible, so ensure that all of your configuration and data is backed up before proceeding. 
 1 .Stop MongoDB. 
-Stop the mongod process by issuing the following command: 
+Stop the mongod process by issuing the following command: 
  
 sudo service mongod stop 
 2 .Remove Packages. 
@@ -573,13 +573,13 @@ prefer-dynamic = {
 ```rust
 let mut json_str = String::new(); 
 std::fs::File::open("test114514.json") 
-    .unwrap() 
-    .read_to_string(&mut json_str) 
-    .unwrap(); 
+    .unwrap() 
+    .read_to_string(&mut json_str) 
+    .unwrap(); 
 // 解析json文本为map 
 let mut jmap: HashMap<String, Value> = serde_json::from_str(&json_str).unwrap(); 
 for (k, _) in jmap { 
-    println!("k:{}", k) 
+    println!("k:{}", k) 
 }
 ```
 
@@ -680,15 +680,15 @@ function SortingByFrequencyAndRemovingDuplicates<T>(arr: T[]): T[] {
 ### 原生js取URL参数
 
 ```javascript
-function getQueryVariable(variable) 
+function getQueryVariable(variable) 
 { 
-    var query = window.location.search.substring(1); 
-    var vars = query.split("&"); 
-    for (var i=0;i<vars.length;i++) { 
-        var pair = vars[i].split("="); 
-        if(pair[0] == variable){return pair[1];} 
-    } 
-    return(false); 
+    var query = window.location.search.substring(1); 
+    var vars = query.split("&"); 
+    for (var i=0;i<vars.length;i++) { 
+        var pair = vars[i].split("="); 
+        if(pair[0] == variable){return pair[1];} 
+    } 
+    return(false); 
 } 
 ```
 
