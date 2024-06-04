@@ -730,6 +730,16 @@ rm  ~/.bash_history && history -c
 
 > 来自 <https://zhuanlan.zhihu.com/p/367623771>
 
+### Linux 查找大文件
+
+```bash
+# 大文件
+find . -type f -size +800M -print0 | xargs -0 du -B 1M | sort -nr | head -30
+
+# 大文件夹
+du -B 1M --max-depth=1 | sort -nr | head -30
+```
+
 ### Linux 输入法配置
 
 > 请无脑选择`fcitx5`，否则你会变得不幸
