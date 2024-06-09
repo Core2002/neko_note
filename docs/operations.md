@@ -396,6 +396,41 @@ To automatically install & run wg-easy, simply run:
 > 💡 Your configuration files will be saved in ~/.wg-easy  
 > 来自 <https://github.com/WeeJeWel/wg-easy>
 
+### RustDesk自建服务器
+
+```yaml
+# docker-compose.yaml
+services:
+  hbbs:
+    container_name: hbbs
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    restart: unless-stopped
+```
+
+```bash
+docker compose up -d
+docker logs hbbs
+```
+
+> 开放端口：TCP(21115, 21116, 21117, 21118, 21119) & UDP(21116)  
+> id服务器(hbbs): server_ip  
+> 中续服务器(hbbr): server_ip:21117  
+
 ## 常规操作
 
 ### Android 删除应用锁
