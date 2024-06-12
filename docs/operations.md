@@ -79,19 +79,35 @@ docker run -d \
 
 ### MiniConda3 Jupyter
 
+准备工作：
+
+1. 在工程文件夹内创建`Dockerfile`
+2. 构建镜像并运行
+
+```dockerfile
+# Dockerfile
+
+FROM continuumio/miniconda3
+ADD . /root
+WORKDIR /root
+RUN conda install python=3.8 -y && conda install jupyter -y
+CMD ["jupyter", "notebook", "--notebook-dir=/root", "--ip='*'", "--port=8888", "--no-browser", "--allow-root"]
+```
+
+```bash
+docker build -t myjupyter:py38 .
+```
+
+启动容器
+
 ```bash
 docker run -i -t \
   -p 8888:8888 \
   --gpus=all \
-  continuumio/miniconda3 /bin/bash \
-  -c "/opt/conda/bin/conda install jupyter -y --quiet && \
-  /opt/conda/bin/jupyter notebook \
-  --notebook-dir=/root \
-  --ip='*' \
-  --port=8888 \
-  --no-browser \
-  --allow-root"
+  myjupyter:py38
 ```
+
+> <https://hub.docker.com/r/continuumio/miniconda3>
 
 ### Cocechat Server web聊天服务器
 
