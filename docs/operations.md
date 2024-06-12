@@ -109,6 +109,31 @@ docker run -i -t \
 
 > <https://hub.docker.com/r/continuumio/miniconda3>
 
+### 一键构建Gradle项目
+
+```bash
+# 使用Wrapper
+docker run -it \
+  --rm \
+  --network=host \
+  -v $(pwd):/pwd \
+  -w /pwd \
+  azul/zulu-openjdk:21.0.3-jdk \
+  /bin/bash -c './gradlew shadowJar'
+
+# 使用外部Gradle
+docker run -it \
+  --rm \
+  --network=host \
+  -v $(pwd):/pwd \
+  -w /pwd \
+  gradle:8.8.0-jdk21 \
+  /bin/bash -c 'gradle shadowJar'
+```
+
+> <https://hub.docker.com/r/azul/zulu-openjdk>
+> <https://hub.docker.com/_/gradle>
+
 ### Cocechat Server web聊天服务器
 
 ```bash
