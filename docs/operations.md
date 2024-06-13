@@ -120,7 +120,9 @@ docker run -it \
   -w /pwd \
   azul/zulu-openjdk:21.0.3-jdk \
   /bin/bash -c './gradlew shadowJar'
+```
 
+```bash
 # 使用外部Gradle
 docker run -it \
   --rm \
