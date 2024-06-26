@@ -62,6 +62,26 @@ docker run -d --restart=always
 docker container update --restart=always <容器名字>
 ```
 
+### Docker 镜像的导入和导出
+
+带压缩
+
+```bash
+# 导出
+docker save myimage:latest | gzip > myimage_latest.tar.gz
+# 导入
+docker load --input myimage_latest.tar.gz
+```
+
+不压缩
+
+```bash
+# 导出
+docker save --output myimage_latest.tar myimage:latest
+# 导入
+docker load --input myimage_latest.tar
+```
+
 ### Ollama 本地部署大语言模型
 
 [可用模型](https://ollama.com/library)
