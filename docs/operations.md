@@ -562,47 +562,60 @@ wireguard
 
 ### Linux 解压缩工具
 
-1、把文件解压到当前目录下  
-`unzip test.zip`
+Tar 用法
 
-2、如果要把文件解压到指定的目录下，需要用到-d参数。  
-`unzip -d /temp test.zip`
+```bash
+# 压缩当前路径
+tar -zcvf dir.tar.gz ./
+# 指定路径解压
+tar -zxvf dir.tar.gz -C dir/
 
-3、解压的时候，有时候不想覆盖已经存在的文件，那么可以加上-n参数  
-`unzip -n test.zip`
+# 从文件 foo 和 bar 创建归档文件 archive.tar。
+tar -cf archive.tar foo bar
+# 从归档文件 archive.tar 中提取所有文件。
+tar -xf archive.tar
 
-`unzip -n -d /temp test.zip`
 
-4、只看一下zip压缩包中包含哪些文件，不进行解压缩  
-`unzip -l test.zip`
+# 参数含义：
+# -z: 使用gzip压缩格式
+# -j: 使用bzip2压缩格式
+# -c: 创建压缩文件
+# -x: 解压压缩文件
+# -v: 显示操作过程
+# -f: 要操作的文件
+```
 
-5、查看显示的文件列表还包含压缩比率  
-`unzip -v test.zip`
+7z 用法
 
-6、检查zip文件是否损坏  
-`unzip -t test.zip`
+```bash
+# 安装
+apt-get install p7zip-full
 
-7、将压缩文件test.zip在指定目录tmp下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件  
-`unzip -o test.zip -d /tmp/`
+# 压缩
+7z a -r dir.7z dir/
 
-> 来自 <https://www.cnblogs.com/endtel/p/10429135.html>
+# 解压
+7z x filename.7z -o ./files/
+```
 
-压缩目录，例如：  
-`zip -r dir1.zip dir1/`
+Zip 用法
 
-Linux 7z用法
+```bash
+# 压缩目录
+zip -r dir1.zip dir1/
+# 解压到当前目录下
+unzip test.zip
 
-安装：  
-`apt-get install p7zip-full`
-
-压缩：  
-`7z a -r dir.7z dir/`
-
-解压：  
-`7z x filename.7z -o./files/`
-
-解压tar,gz  
-`tar -zxvf tar.gz`
+# 指定路径解压  
+unzip -d /temp test.zip
+# 解压但不覆盖
+unzip -n test.zip
+unzip -n -d /temp test.zip
+# 查看包内文件但不解压
+unzip -l test.zip
+# 测试压缩包是否损坏
+unzip -t test.zip
+```
 
 ### Redis 配置持久化
 
