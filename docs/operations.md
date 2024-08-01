@@ -542,11 +542,7 @@ nano /etc/ssh/sshd_config
 
 `8NWCW-Y4HCC-TKDRT-DGRH3-YBH3B`
 
-### 科学上网
-
-ssr
-
-`bash <(curl -sL https://s.hijk.art/ssr.sh)`
+### Science Connect Internet (SCI)
 
 v2_hijkpw
 
