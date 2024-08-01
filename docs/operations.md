@@ -805,6 +805,9 @@ date -s "$(curl http://s3.amazonaws.com -v 2>&1 | grep "Date: " | awk '{ print $
 
 ### Enabling RSA Key login
 
+> ⚠ 警告：此操作为危险操作  
+> ⚠ Warning: This operation is a hazardous action.
+
 Instead of modifying /etc/ssh/sshd_config, which is the default SSH configuration file, we just need to add a /etc/ssh/sshd_config.d/enable_rsa_keys.conf configuration file:
 
 ```bash
