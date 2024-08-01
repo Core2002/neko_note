@@ -542,7 +542,7 @@ nano /etc/ssh/sshd_config
 
 `8NWCW-Y4HCC-TKDRT-DGRH3-YBH3B`
 
-### 一键部署梯子服务
+### 科学上网
 
 ssr
 
