@@ -527,6 +527,11 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 docker.fxxk.dedyn.io/
 ```
 
+如果你需要使用本地代理服务，请参阅 [官方文档](https://docs.docker.com/engine/daemon/proxy/#httphttps-proxy)
+> 警告⚠： 如果你正在将 `Docker守护进程` 作为 `systemd` 服务运行，你应该创建一个systemd的drop-in文件来设置Docker服务的变量。而 `不是` 修改daemon.json或系统/用户的环境变量  
+>
+> 警告⚠： 如果你选择配置本地代理服务，请务必保证服务可用
+
 #### Huggingface
 
 ```bash
