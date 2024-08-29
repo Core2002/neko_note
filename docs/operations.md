@@ -6,13 +6,17 @@
 
 一键安装命令：
 
-`curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun`
+```bash
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
 
-也可以使用国内 daocloud 一键安装命令：
+国内版(根据网速任选一段执行)
 
-`curl -sSL https://get.daocloud.io/docker | sh`
-
-> 来自 <https://www.runoob.com/docker/debian-docker-install.html>
+```bash
+# 北京外国语大学开源软件镜像站
+export DOWNLOAD_URL="https://mirrors.bfsu.edu.cn/docker-ce"
+curl -fsSL https://raw.githubusercontent.com/docker/docker-install/master/install.sh | sh
+```
 
 若需要使用GPU，需安装 `container-toolkit` -> [技术文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation)
 
@@ -495,6 +499,46 @@ docker logs hbbs
 > 中续服务器(hbbr): server_ip:21117  
 
 ## 常规操作
+
+### 网络配置
+
+#### Python
+
+```bash
+# Cli 临时调用 （普通包）
+pip install -i https://mirrors.bfsu.edu.cn/pypi/web/simple
+
+# 前缀在requirements.txt第一行 或 Cli调用 （pytorch包）
+--extra-index-url https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.html
+```
+
+#### Conda
+
+```bash
+# 命令行修改配置文件
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+```
+
+#### Docker
+
+```bash
+# 镜像名前缀<不稳定>
+docker.fxxk.dedyn.io/
+```
+
+#### Huggingface
+
+```bash
+# Linux环境变量
+export HF_ENDPOINT=https://hf-mirror.com
+
+# Windows Powershell环境变量
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+
+# 非侵入式
+HF_ENDPOINT=https://hf-mirror.com python your_script.py
+```
 
 ### Android 删除应用锁
 
