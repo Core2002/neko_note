@@ -611,7 +611,7 @@ wireguard
 
 ### Linux 解压缩工具
 
-Tar 用法
+#### Tar 用法
 
 ```bash
 # 压缩当前路径
@@ -634,7 +634,7 @@ tar -xf archive.tar
 # -f: 要操作的文件
 ```
 
-7z 用法
+#### 7z 用法
 
 ```bash
 # 安装
@@ -647,7 +647,7 @@ apt-get install p7zip-full
 7z x filename.7z -o ./files/
 ```
 
-Zip 用法
+#### Zip 用法
 
 ```bash
 # 压缩目录
@@ -665,6 +665,43 @@ unzip -l test.zip
 # 测试压缩包是否损坏
 unzip -t test.zip
 ```
+
+#### Zip文件解压编码问题
+
+使用 `unar` 解压工具，自动处理编码问题
+
+```bash
+apt install unar
+
+unar -h
+# unar v1.10.7 (Nov 29 2023), a tool for extracting the contents of archive files.
+
+# Usage: unar [options] archive [files ...]
+
+unar test.zip
+```
+
+---
+
+使用 [`unzip编码补丁`](https://github.com/ikohara/dpkg-unzip-iconv)
+
+```bash
+# 安装
+yay -S unzip-iconv
+
+# 用法
+unzip -O cp936 myzip.zip
+```
+
+---
+
+中国国家标准总局发布的中文字符集有`GB2312`、`GBK`与`GB18030`三种:  
+
+- `GB2312` 发布于1980年，收录汉字6763个
+- `GBK` 汉字内码扩展规范，发布于1995年，收录汉字21003个
+- `GB18030` 现行版本发布于2005年，收录汉字70244个
+
+> `GBK` 在IBM的Code Page中的第936页，所以也叫 `CP936`
 
 ### Redis 配置持久化
 
