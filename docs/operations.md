@@ -897,6 +897,11 @@ autocutsel -f
 ```powershell
 netsh wlan show profiles
 netsh wlan show profile name="Redmi Note 12 Turbo" key=clear
+```
+
+### Linux 手动同步系统时间
+
+```bash
 date -s "$(curl http://s3.amazonaws.com -v 2>&1 | grep "Date: " | awk '{ print $3 " " $5 " " $4 " " $7 " " $6 " GMT"}')"
 ```
 
