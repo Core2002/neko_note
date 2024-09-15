@@ -6,6 +6,10 @@ copyright: Copyright &copy; 2018 Core2002
 site_description: The markdown note book.
 theme:
   name: material
+  language: zh
+  font:
+    text: Noto Sans
+    code: JetBrains Mono
   features:
     - content.code.copy
     - content.code.select
@@ -36,4 +40,3 @@ markdown_extensions:
       alternate_style: true
 extra:
   generator: false
-  
