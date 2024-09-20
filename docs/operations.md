@@ -502,6 +502,12 @@ docker logs hbbs
 
 ### 网络配置
 
+#### NodeJs
+
+```bash
+npm --registry https://registry.npmmirror.com/
+```
+
 #### Python
 
 ```bash
