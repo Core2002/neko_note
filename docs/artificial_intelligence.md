@@ -1,6 +1,10 @@
 # Artificial Intelligence
 
-## ControlNet安装教程
+## 前提摘要
+
+> ⚠ 警告：如果您处于网络受限的国家或地区，请首先参阅 [网络配置篇章](./operations.md#网络配置)。
+
+## ControlNet插件安装范例
 
 前提：你要将AI绘画的WebUI更新到最新版本
 
