@@ -453,9 +453,13 @@ sudo aircrack-ng -w passwd.txt  wlan-01.cap
 ### Helix：一款注重安全防护的Linux版本
 
 > Helix是一款自定义版本的Knoppix自启动Linux光盘系统。Helix远不止是一张自启动光盘。除了光盘启动到自定义的Linux环境，还具有超强的硬件支持能力，包含许多应付各种问题的软件。Helix尽量少的接触主机软硬资源。Helix不自动加载交换（swap）空间，不自动加载其它任何外围设备。Helix还可以自动加载Windows，以应对意外情况。
+
 ---
+
 > Tip: 一款优秀的文本编辑器和它重名
+
 ---
+
 > Helix - 后现代模态文本编辑器  
 > 一个使用Rust编写的，内置语言服务器的，受到 Kakoune / Neovim 启发的终端模态编辑器。编辑模型非常依赖于 Kakoune；在开发过程中，我发现自己的观点与 Kakoune 的设计决策大部分是一致的。
 
@@ -469,14 +473,22 @@ sudo aircrack-ng -w passwd.txt  wlan-01.cap
 
 ### TrueCrypt：开源的Windows和Linux磁盘加密软件
 
-> ~~TrueCrypt是一款非常出色的开源磁盘加密系统。用户可以加密整个文件系统，它可以实时加密/解密而不需要用户干涉，只要事先输入密码。非常巧妙的hidden volume特性允许您对特别敏感的内容进行第二层加密来隐藏它的存在。所以就算加密系统的密码暴露，黑客也不知道还有隐藏内容存在。~~
+> <del>TrueCrypt是一款非常出色的开源磁盘加密系统。用户可以加密整个文件系统，它可以实时加密/解密而不需要用户干涉，只要事先输入密码。非常巧妙的hidden volume特性允许您对特别敏感的内容进行第二层加密来隐藏它的存在。所以就算加密系统的密码暴露，黑客也不知道还有隐藏内容存在。</del>
+
 ---
+
 > ⚠ 警告：使用 TrueCrypt `不安全`，因为它可能包含未修复的安全问题。
+
 ---
+
 > ⚠ 警告：TrueCrypt的发展在 2014 年 5 月结束，当时微软停止了对 Windows XP 的支持。Windows 8/7/Vista 及后续版本提供了对加密磁盘和虚拟磁盘镜像的集成支持。其他平台上也提供了类似的集成支持。
+
 ---
+
 > ⚠ 警告：你应该将使用TrueCrypt进行加密的数据迁移到支持您平台的加密磁盘或虚拟磁盘镜像。
+
 ---
+
 `VeraCrypt` 是一个免费的开源磁盘加密软件，支持 Windows、Mac OS X 和 Linux。由 [IDRIX](https://www.idrix.fr) 提供，并基于 TrueCrypt 7.1a。
 
 ### Watchfire AppScan：商业网页漏洞扫描器
