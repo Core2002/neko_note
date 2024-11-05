@@ -502,6 +502,10 @@ docker logs hbbs
 
 ### 网络配置
 
+#### Windows下各种二进制软件包
+
+[阿里云二进制镜像站](https://registry.npmmirror.com/binary.html)
+
 #### NodeJs
 
 ```bash
