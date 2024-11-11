@@ -92,6 +92,7 @@ docker load --input myimage_latest.tar
 
 ```bash
 docker run -d \
+  --restart=always \
   -e OLLAMA_HOST="0.0.0.0" \
   -e OLLAMA_ORIGINS="*" \
   --gpus=all \
