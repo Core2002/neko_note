@@ -1028,6 +1028,27 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 > 如有需要，请参考 Arch Linux 的官方文档或 GRUB 的文档以获取更多关于修改 GRUB 背景的详细信息和选项。  
 > 来自 <https://chat.openai.com/c/a82707d9-ad65-453c-8f5d-0e3257f1eb05>
 
+### Linux 安装 Visual Studio Code
+
+#### 基于RHEL, Fedora, 和 CentOS 的分发
+
+我们目前在 yum 存储库中分发稳定的 64 位 VS Code，执行以下脚本将安装密钥和存储库：
+
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+```
+
+然后更新软件包缓存并使用 dnf 安装软件包（适用于 Fedora 22 及以上版本）:
+
+```bash
+dnf check-update
+sudo dnf install code # or code-insiders
+```
+
+> 由于手动签名流程和我们用于发布的系统，yum 存储库可能会滞后，无法立即获取 Visual Studio Code 的最新版本。  
+> 原文连接 <https://code.visualstudio.com/docs/setup/linux>
+
 ### VMware 许可证密钥，批量永久激活
 
 ```text
