@@ -1028,6 +1028,18 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 > 如有需要，请参考 Arch Linux 的官方文档或 GRUB 的文档以获取更多关于修改 GRUB 背景的详细信息和选项。  
 > 来自 <https://chat.openai.com/c/a82707d9-ad65-453c-8f5d-0e3257f1eb05>
 
+### Visual Studio Code 快捷键
+
+#### Linux 版本
+
+放大：`Ctrl` + `+`  
+缩小：`Ctrl` + `-`  
+重置缩放：`Ctrl` + `0`  
+> (`0`是小键盘数字键)
+
+格式化代码: `Ctrl` + `Shift` + `I`  
+重命名标识符: `F2`
+
 ### Linux 安装 Visual Studio Code
 
 #### 基于RHEL, Fedora, 和 CentOS 的分发
@@ -1048,6 +1060,7 @@ sudo dnf install code # or code-insiders
 
 > 由于手动签名流程和我们用于发布的系统，yum 存储库可能会滞后，无法立即获取 Visual Studio Code 的最新版本。  
 > 原文连接 <https://code.visualstudio.com/docs/setup/linux>
+
 
 ### VMware 许可证密钥，批量永久激活
 
