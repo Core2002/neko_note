@@ -275,8 +275,16 @@ publishing {
 `gradle.propertis`
 
 ```conf
-#systemProp.https.proxyHost=127.0.0.1 
-#systemProp.https.proxyPort=20171 
+systemProp.https.proxyHost=127.0.0.1 
+systemProp.https.proxyPort=20171 
+```
+
+### 手动指定 Java Home
+
+`gradle.propertis`
+
+```conf
+org.gradle.java.home=D:\\_SoftWare_Win\\zulu17.38.21-ca-fx-jdk17.0.5-win_x64
 ```
 
 ### Gradle重定向包名
@@ -583,6 +591,8 @@ sudo rm -r /var/lib/mongodb
 
 ## Golang
 
+### 编译动态链接库
+
 如果是windows系统，则编译命令为：
 
 ```powershell
@@ -637,7 +647,7 @@ nuitka --standalone --onefile demo.py
 
 ## Rust
 
-### 让编译产物变小的构建方式
+### 动态链接法减小编译产物体积
 
 ```bash
 cargo rustc --release -- -C prefer-dynamic 
