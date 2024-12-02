@@ -270,6 +270,14 @@ publishing {
 }
 ```
 
+### Gradle Wrapper 国内加速
+
+`gradle/wrapper/gradle-wrapper.properties`
+
+```conf
+distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-8.7-bin.zip
+```
+
 ### 配置HTTP代理
 
 `gradle.propertis`
