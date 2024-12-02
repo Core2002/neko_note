@@ -942,6 +942,12 @@ rm  ~/.bash_history && history -c
 
 > 来自 <https://zhuanlan.zhihu.com/p/367623771>
 
+### Linux 移动目录下所有文件到当前目录并清空空文件夹
+
+```bash
+find . -type f -print0 | xargs -0 mv -t . ; find . -type d -empty -delete
+```
+
 ### Linux 查找大文件
 
 ```bash
