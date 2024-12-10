@@ -778,6 +778,17 @@ apt update && apt upgrade -y
 
 > 来自 <https://www.jianshu.com/p/b4a792945d99>
 
+### Conda 设置自动激活Base环境
+
+```powershell
+# 检查当前配置
+conda config --show auto_activate_base
+# 禁用自动激活
+conda config --set auto_activate_base false
+# 手动激活
+conda activate base
+```
+
 ### Powershell / Cmd 设置环境变量
 
 ```powershell
