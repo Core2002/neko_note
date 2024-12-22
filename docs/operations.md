@@ -787,6 +787,9 @@ conda config --show auto_activate_base
 conda config --set auto_activate_base false
 # 手动激活
 conda activate base
+
+# 取消激活
+conda deactivate
 ```
 
 ### Powershell / Cmd 设置环境变量
