@@ -972,6 +972,12 @@ find . -type f -size +800M -print0 | xargs -0 du -B 1M | sort -nr | head -30
 du -B 1M --max-depth=1 | sort -nr | head -30
 ```
 
+### APT 更新密钥
+
+```bash
+sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+```
+
 ### Linux 输入法配置
 
 > 请无脑选择`fcitx5`，否则你会变得不幸
