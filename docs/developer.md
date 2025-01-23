@@ -1058,3 +1058,81 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     
 } 
 ```
+
+## LaTex
+
+### 快速开始
+
+```tex
+\documentclass[a4paper, 12pt]{article}
+\usepackage{xeCJK}      % 引入 CJK 宏包支持中文
+\usepackage{amsmath}    % 引入 amsmath 宏包支持数学公式
+\usepackage{hyperref}   % 引入 hyperref 宏包生成书签
+\usepackage{geometry}   % 引入 geometry 宏包设置页面边距
+\usepackage{setspace}   % 引入 setspace 宏包设置行间距
+
+% 配置 hyperref 宏包
+\hypersetup{
+    colorlinks=true,        % 链接颜色
+    linkcolor=black,        % 内部链接颜色
+    citecolor=blue,         % 引用链接颜色
+    filecolor=magenta,      % 文件链接颜色
+    urlcolor=cyan           % URL 链接颜色
+}
+
+% 设置页面边距
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+% 设置行间距
+\onehalfspacing
+
+% 设置中文字体为宋体
+\setCJKmainfont{SimSun}   % 正文主要字体
+\setCJKsansfont{SimHei}   % 无衬线字体（用于标题等）
+\setCJKmonofont{FangSong} % 等宽字体（用于代码等）
+
+% 设置西文字体
+\setmainfont{Times New Roman} % 正文主要字体
+\setsansfont{Arial}           % 无衬线字体（用于标题等）
+\setmonofont{Courier New}     % 等宽字体（用于代码等）
+
+\begin{document}
+  \title{\LaTeX 快速开始}
+  \author{Core}
+  \date{\today}
+  \maketitle
+  % \newpage
+
+  \tableofcontents % 生成目录
+  \newpage
+
+  \section{绪论}
+  \LaTeX 是基于 TeX 语言的擅长公式表达的自动化排版系统。
+
+  \section{快速开始}
+
+  \subsection{软件安装}
+  TeX Live 是 \LaTeX 的发行版之一。你可以到 \href{https://mirrors.tuna.tsinghua.edu.cn}{清华大学开源软件镜像站} 下载并安装。
+  
+  \subsection{文档攥写}
+  我已经猜到了你不知道写什么，你可以复刻本文档，起名为hello.tex。
+  
+  \subsection{文档排版}
+  XeTeX是Unicode友好的 \LaTeX 引擎。我们使用 XeLaTeX 编译器排版 \LaTeX 文档。
+  
+  \subsubsection{可选前置}
+  新建 latexmkrc 文件，写入以下配置：
+  \begin{verbatim}
+    $pdflatex = 'xelatex %O %S';
+  \end{verbatim}
+
+  \subsubsection{编译文档}
+  输入命令：
+  \begin{verbatim}
+    latexmk -xelatex hello.tex
+  \end{verbatim}
+  可见编译产物 hello.pdf
+
+  \section{最终章}
+  \[ mz\mbox{快干活} \]
+\end{document}
+```
