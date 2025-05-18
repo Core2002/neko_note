@@ -562,6 +562,25 @@ HF_ENDPOINT=https://hf-mirror.com python your_script.py
 rm /data/system/access_control.key
 ```
 
+### CMD 启动自启动
+
+```batch
+:: 这是一个管理员权限下的cmd命令，请勿在PowerShell中执行
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d @^%USERPROFILE^%\autorun.cmd" "2^>NUL /f
+```
+
+手动在`%USERPROFILE%`创建`autorun.cmd`文件，例如配置fnm([Fast Node Manager](https://github.com/Schniz/fnm)):
+
+```batch
+@echo off
+:: %USERPROFILE%/autorun.cmd
+:: for /F will launch a new instance of cmd so we create a guard to prevent an infnite loop
+if not defined FNM_AUTORUN_GUARD (
+    set "FNM_AUTORUN_GUARD=AutorunGuard"
+    FOR /f "tokens=*" %%z IN ('fnm env --use-on-cd') DO CALL %%z
+)
+```
+
 ### Linux 修改主机名
 
 ```bash
