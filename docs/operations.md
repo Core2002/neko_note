@@ -519,6 +519,8 @@ npm --registry https://registry.npmmirror.com/
 # Cli 临时调用 （普通包）
 pip install -i https://mirrors.bfsu.edu.cn/pypi/web/simple
 
+pip install -i https://mirrors.pku.edu.cn/pypi/web/simple
+
 # 前缀在requirements.txt第一行 或 Cli调用 （pytorch包）
 --extra-index-url https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.html
 ```
