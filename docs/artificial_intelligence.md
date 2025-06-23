@@ -4,6 +4,25 @@
 
 > ⚠ 警告：如果您处于网络受限的国家或地区，请首先参阅 [网络配置篇章](./operations.md#huggingface)。
 
+## TensorFlow to ONNX
+
+```bash
+pip install tensorflow
+pip install -U tf2onnx
+
+python -m tf2onnx.convert --opset 16 --tflite facenet_512.tflite --output facenet_512.tflite.onnx
+```
+
+## ONNX to NCNN
+
+[NCNN](https://github.com/Tencent/ncnn)安装过程略
+
+```bash
+# onnx2ncnn [onnxpb] [ncnnparam] [ncnnbin]
+pip install pnnx
+./onnx2ncnn facenet_512.tflite.onnx facenet_512.tflite.onnx.ncnn.parm facenet_512.tflite.onnx.ncnn.bin
+```
+
 ## ControlNet插件安装范例
 
 前提：你要将AI绘画的WebUI更新到最新版本
