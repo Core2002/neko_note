@@ -813,6 +813,16 @@ conda activate base
 conda deactivate
 ```
 
+### Powershell批量输出源文件内容
+
+```powershell
+Get-ChildItem -Path . -Recurse -Filter "*.kt" | ForEach-Object {
+    Write-Host "--- Content of file: $($_.FullName) ---"
+    Get-Content $_.FullName -Encoding Utf8
+    Write-Host ""
+}
+```
+
 ### Powershell / Cmd 设置环境变量
 
 ```powershell
