@@ -328,6 +328,11 @@ docker run -d --privileged=true \
 gitea/gitea:latest
 ```
 
+```bash
+# 修改密码
+docker exec -it [容器名称或ID] su git bash -c "gitea admin user change-password --username [用户名] --password [新密码] --config /data/gitea/conf/app.ini"
+```
+
 ### Maven私服 reposilite
 
 ```bash
