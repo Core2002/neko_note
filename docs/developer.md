@@ -253,7 +253,87 @@ mvn install:install-file \
 
 ## Gradle
 
-### Gradle配置内网maven仓库
+### Gradle 指定项目编码
+
+Kotlin DSL
+
+```kts
+// 1. 设置所有 Java 编译任务的编码为 UTF-8
+// tasks.withType<T> 是 KTS 中配置特定类型任务的标准方式
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+// 2. 设置资源文件处理任务的编码（防止资源文件乱码）
+tasks.withType<ProcessResources> {
+    encoding = "UTF-8"
+}
+
+// 3. (可选) 设置 Javadoc 生成任务的编码（防止 Javadoc 乱码）
+tasks.withType<Javadoc> {
+    options.encoding = "UTF-8"
+    // options.charset = "UTF-8" // 如果需要，也可以设置字符集
+}
+```
+
+Groovy DSL
+
+```groovy
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+processResources {
+    encoding = "UTF-8"
+}
+```
+
+### Gradle 配置主类
+
+Kotlin DSL
+
+```kts
+// 启用 Java 插件
+plugins {
+    java
+}
+
+tasks.jar {
+    // [可选] 指定生成的 JAR 文件名
+    archiveFileName.set("MyApp.jar")
+    
+    // 关键配置：配置 MANIFEST.MF 文件
+    manifest {
+        attributes(mapOf(
+            // 指定主类，格式为：包名.类名
+            "Main-Class" to "com.yourpackage.MainApplicationClass"
+        ))
+    }
+}
+```
+
+Groovy DSL
+
+```groovy
+// 启用 Java 插件
+apply plugin: 'java' 
+// 或者 plugins { id 'java' }
+
+jar {
+    // [可选] 指定生成的 JAR 文件名
+    archiveFileName = 'MyApp.jar'
+    
+    // 关键配置：配置 MANIFEST.MF 文件
+    manifest {
+        attributes(
+            // 指定主类，格式为：包名.类名
+            'Main-Class': 'com.yourpackage.MainApplicationClass'
+        )
+    }
+}
+```
+
+### Gradle 配置内网maven仓库
 
 ```gradle
 repositories{ 
