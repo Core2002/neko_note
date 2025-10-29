@@ -17,6 +17,24 @@
 
 > <https://mirrors.cloud.tencent.com/help/maven.html>
 
+### Maven 生成可执行 JAR 包并指定主类
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>3.4.2</version>
+    <configuration>
+        <archive>
+            <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>fun.fifu.testdemo.Testdemo</mainClass> 
+            </manifest>
+        </archive>
+    </configuration>
+</plugin>
+```
+
 ### Maven 打包依赖并设置主类
 
 ```xml
