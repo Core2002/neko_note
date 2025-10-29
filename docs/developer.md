@@ -2,6 +2,21 @@
 
 ## Maven
 
+### Maven 配置腾讯云镜像
+
+打开maven的设置文件 `settings.xml` ，配置如下 repository mirror ：
+
+```xml
+<mirror>
+    <id>nexus-tencentyun</id>
+    <mirrorOf>*</mirrorOf>
+    <name>Nexus tencentyun</name>
+    <url>http://mirrors.cloud.tencent.com/nexus/repository/maven-public/</url>
+</mirror> 
+```
+
+> <https://mirrors.cloud.tencent.com/help/maven.html>
+
 ### Maven 打包依赖并设置主类
 
 ```xml
