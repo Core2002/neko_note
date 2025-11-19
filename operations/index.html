@@ -1,0 +1,3261 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The markdown note book.">
+      
+      
+        <meta name="author" content="Core2002">
+      
+      
+      
+        <link rel="prev" href="../developer/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Operations - Neko Note</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operations" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="Neko Note" class="md-header__button md-logo" aria-label="Neko Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neko Note
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Core2002/neko_note" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Core2002/neko_note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Neko Note" class="md-nav__button md-logo" aria-label="Neko Note" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Neko Note
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Core2002/neko_note" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Core2002/neko_note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artificial_intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artificial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cyber_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cyber Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 容器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 自动重启容器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 镜像的导入和导出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama 本地部署大语言模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miniconda3-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiniConda3 Jupyter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一键构建 Gradle 项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocechat-server-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cocechat Server web 聊天服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudreve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudreve 云盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discuzq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discuzq 论坛/博客
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitlab 代码托管平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache 文件服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSCode 网页版服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MariaDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP 摄像头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MongoDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codefever-communiy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CodeFever Communiy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea 代码托管平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-reposilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 私服 reposilite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 仓库管理器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-nexus3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 私服 nexus3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clash 服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        直播推流服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-pptp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPN-PPTP 服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudreve_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudreve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WireGuard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rustdesk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RustDesk 自建服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常规操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常规操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网络配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 下各种二进制软件包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodeJs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huggingface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Huggingface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 删除应用锁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMD 启动自启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 修改主机名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序开机启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 关闭密码登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-10-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 10 Pro 激活密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#science-connect-internet-sci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Science Connect Internet (SCI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 解压缩工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 解压缩工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tar 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7z 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zip 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zip 文件解压编码问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis 配置持久化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JVM 配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian 快速换国内源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda 设置自动激活 Base 环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powershell 批量输出源文件内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powershell / Cmd 设置环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-wsgidav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python wsgidav 安装方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Btop 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-for-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI for Debian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 安装中文字体包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNC 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNC 共享剪切板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 查看已连接过的 wlan 密码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 手动同步系统时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-rsa-key-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling RSA Key login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 清空命令日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 移动目录下所有文件到当前目录并清空空文件夹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 查找大文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APT 更新密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 输入法配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssl111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Openssl111 旧版本安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grubgrand-unified-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改 GRUB（GRand Unified Bootloader）的背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Studio Code 快捷键
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Studio Code 快捷键">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 安装 Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 安装 Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rhel-fedora-centos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 RHEL, Fedora, 和 CentOS 的分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        杂项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电信光猫后门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        移动光猫后门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        紫轩的便携在线工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线取真随机数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        记忆碎片
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 容器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 自动重启容器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker 镜像的导入和导出
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ollama 本地部署大语言模型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miniconda3-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiniConda3 Jupyter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一键构建 Gradle 项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cocechat-server-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cocechat Server web 聊天服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudreve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudreve 云盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discuzq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discuzq 论坛/博客
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitlab 代码托管平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apache 文件服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VSCode 网页版服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mariadb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MariaDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP 摄像头
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MongoDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codefever-communiy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CodeFever Communiy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea 代码托管平台
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-reposilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 私服 reposilite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 仓库管理器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-nexus3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maven 私服 nexus3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clash 服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        直播推流服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-pptp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VPN-PPTP 服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudreve_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudreve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WireGuard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rustdesk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RustDesk 自建服务器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常规操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常规操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网络配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 下各种二进制软件包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodeJs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huggingface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Huggingface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 删除应用锁
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMD 启动自启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 修改主机名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序开机启动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 关闭密码登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-10-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 10 Pro 激活密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#science-connect-internet-sci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Science Connect Internet (SCI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 解压缩工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 解压缩工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tar 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7z 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zip 用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zip 文件解压编码问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis 配置持久化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JVM 配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian 快速换国内源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda 设置自动激活 Base 环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powershell 批量输出源文件内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Powershell / Cmd 设置环境变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-wsgidav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python wsgidav 安装方法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#btop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Btop 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-for-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI for Debian
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 安装中文字体包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNC 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vnc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VNC 共享剪切板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows 查看已连接过的 wlan 密码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 手动同步系统时间
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-rsa-key-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling RSA Key login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 清空命令日志
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 移动目录下所有文件到当前目录并清空空文件夹
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 查找大文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APT 更新密钥
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 输入法配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openssl111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Openssl111 旧版本安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grubgrand-unified-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改 GRUB（GRand Unified Bootloader）的背景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Studio Code 快捷键
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visual Studio Code 快捷键">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux-visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux 安装 Visual Studio Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 安装 Visual Studio Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rhel-fedora-centos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于 RHEL, Fedora, 和 CentOS 的分发
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        杂项
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="杂项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        电信光猫后门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        移动光猫后门
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        紫轩的便携在线工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线取真随机数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        记忆碎片
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="operations">Operations</h1>
+<h2 id="docker">Docker 容器</h2>
+<h3 id="docker_1">Docker 安装</h3>
+<p>一键安装命令：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>docker<span class="w"> </span>--mirror<span class="w"> </span>Aliyun
+</span></code></pre></div>
+<p>国内版 (根据网速任选一段执行)</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 北京外国语大学开源软件镜像站</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DOWNLOAD_URL</span><span class="o">=</span><span class="s2">&quot;https://mirrors.bfsu.edu.cn/docker-ce&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/docker/docker-install/master/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span></code></pre></div>
+<p>若需要使用 GPU，需安装 <code>container-toolkit</code> -&gt; <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation">技术文档</a></p>
+<p>Installing with Apt</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Configure the production repository:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://nvidia.github.io/libnvidia-container/gpgkey<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>sed<span class="w"> </span><span class="s1">&#39;s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nvidia-container-toolkit.list
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Optionally, configure the repository to use experimental packages:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>sed<span class="w"> </span>-i<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;/experimental/ s/^#//g&#39;</span><span class="w"> </span>/etc/apt/sources.list.d/nvidia-container-toolkit.list
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Update the packages list from the repository:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># Install the NVIDIA Container Toolkit packages:</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-container-toolkit
+</span></code></pre></div>
+<p>Installing with Zypper</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Configure the production repository:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>ar<span class="w"> </span>https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Optionally, configure the repository to use experimental packages:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>modifyrepo<span class="w"> </span>--enable<span class="w"> </span>nvidia-container-toolkit-experimental
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Install the NVIDIA Container Toolkit packages:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>--gpg-auto-import-keys<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-container-toolkit
+</span></code></pre></div>
+<p>Configuring Docker</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>nvidia-ctk<span class="w"> </span>runtime<span class="w"> </span>configure<span class="w"> </span>--runtime<span class="o">=</span>docker
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+</span></code></pre></div>
+<h3 id="docker_2">Docker 自动重启容器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--restart<span class="o">=</span>always
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>container<span class="w"> </span>update<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>&lt;容器名字&gt;
+</span></code></pre></div>
+<h3 id="docker_3">Docker 镜像的导入和导出</h3>
+<p>带压缩</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 导出</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>save<span class="w"> </span>myimage:latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>myimage_latest.tar.gz
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># 导入</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>docker<span class="w"> </span>load<span class="w"> </span>--input<span class="w"> </span>myimage_latest.tar.gz
+</span></code></pre></div>
+<p>不压缩</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 导出</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>save<span class="w"> </span>--output<span class="w"> </span>myimage_latest.tar<span class="w"> </span>myimage:latest
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># 导入</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker<span class="w"> </span>load<span class="w"> </span>--input<span class="w"> </span>myimage_latest.tar
+</span></code></pre></div>
+<h3 id="ollama">Ollama 本地部署大语言模型</h3>
+<p><a href="https://ollama.com/library">可用模型</a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">OLLAMA_HOST</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">OLLAMA_ORIGINS</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span>--gpus<span class="o">=</span>all<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span>-v<span class="w"> </span>ollama:/root/.ollama<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">11434</span>:11434<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span>--name<span class="w"> </span>ollama<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span>ollama/ollama
+</span></code></pre></div>
+<h3 id="miniconda3-jupyter">MiniConda3 Jupyter</h3>
+<p>准备工作：</p>
+<ol>
+<li>在工程文件夹内创建<code>Dockerfile</code></li>
+<li>构建镜像并运行</li>
+</ol>
+<div class="language-dockerfile highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Dockerfile</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">FROM</span><span class="w"> </span><span class="s">continuumio/miniconda3</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">ADD</span><span class="w"> </span>.<span class="w"> </span>/root
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/root</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">RUN</span><span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>-y
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;jupyter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;notebook&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--notebook-dir=/root&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--ip=&#39;*&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--port=8888&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--no-browser&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--allow-root&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myjupyter:py38<span class="w"> </span>.
+</span></code></pre></div>
+<p>启动容器</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-i<span class="w"> </span>-t<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8888</span>:8888<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>--gpus<span class="o">=</span>all<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span>myjupyter:py38
+</span></code></pre></div>
+<blockquote>
+<p><a href="https://hub.docker.com/r/continuumio/miniconda3">https://hub.docker.com/r/continuumio/miniconda3</a></p>
+</blockquote>
+<h3 id="gradle">一键构建 Gradle 项目</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># 使用Wrapper</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span>--network<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/pwd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span>-w<span class="w"> </span>/pwd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span>azul/zulu-openjdk:21.0.3-jdk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;./gradlew shadowJar&#39;</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># 使用外部Gradle</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span>--network<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/pwd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span>-w<span class="w"> </span>/pwd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span>gradle:8.8.0-jdk21<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;gradle shadowJar&#39;</span>
+</span></code></pre></div>
+<blockquote>
+<p><a href="https://hub.docker.com/r/azul/zulu-openjdk">https://hub.docker.com/r/azul/zulu-openjdk</a>
+<a href="https://hub.docker.com/_/gradle">https://hub.docker.com/_/gradle</a></p>
+</blockquote>
+<h3 id="cocechat-server-web">Cocechat Server web 聊天服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">3009</span>:3000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span>--name<span class="w"> </span>vocechat-server<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span>privoce/vocechat-server:latest
+</span></code></pre></div>
+<h3 id="cloudreve">Cloudreve  云盘</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span>--name<span class="w"> </span>cloudreve<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span>-v<span class="w"> </span>/etc/cloudreve:/root/cloudreve<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span>-v<span class="w"> </span>/data/cloudreve:/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">8081</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span>littleplus/cloudreve-3.0.0-rc-1:sqlite
+</span></code></pre></div>
+<h3 id="discuzq">Discuzq  论坛/博客</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span>-p<span class="w"> </span><span class="m">443</span>:443<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span>ccr.ccs.tencentyun.com/discuzq/dzq:latest
+</span></code></pre></div>
+<h3 id="gitlab">Gitlab 代码托管平台</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--detach<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span>--hostname<span class="w"> </span>doc.oracleclub.store<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>--publish<span class="w"> </span><span class="m">443</span>:443<span class="w"> </span>--publish<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span>--publish<span class="w"> </span><span class="m">1022</span>:22<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span>--name<span class="w"> </span>gitlab<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span>--volume<span class="w"> </span>/data/gitlab/config:/etc/gitlab<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span>--volume<span class="w"> </span>/data/gitlab/logs:/var/log/gitlab<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span>--volume<span class="w"> </span>/data/gitlab/data:/var/opt/gitlab<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span>--shm-size<span class="w"> </span>256m<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span>gitlab/gitlab-ce:latest
+</span></code></pre></div>
+<h3 id="apache">Apache 文件服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w"> </span>--name<span class="w"> </span>apache-app<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w"> </span>-p<span class="w"> </span><span class="m">2333</span>:80<span class="w"> </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w"> </span>-v<span class="w"> </span>/data/files:/usr/local/apache2/htdocs/:ro<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w"> </span>httpd:latest
+</span></code></pre></div>
+<h3 id="vscode">VSCode 网页版服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span>--name<span class="o">=</span>code-server<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Europe/London<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">PASSWORD</span><span class="o">=</span>password<span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">HASHED_PASSWORD</span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">SUDO_PASSWORD</span><span class="o">=</span>password<span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">SUDO_PASSWORD_HASH</span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">PROXY_DOMAIN</span><span class="o">=</span>code-server.my.domain<span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">DEFAULT_WORKSPACE</span><span class="o">=</span>/config/workspace<span class="w"> </span><span class="sb">`</span><span class="c1">#optional` \</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">8443</span>:8443<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">  </span>-v<span class="w"> </span>/path/to/appdata/config:/config<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">  </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">  </span>lscr.io/linuxserver/code-server:latest
+</span></code></pre></div>
+<p>来自 <a href="https://hub.docker.com/r/linuxserver/code-server">https://hub.docker.com/r/linuxserver/code-server</a></p>
+<h3 id="mariadb">MariaDB</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>--name<span class="w"> </span>mariadb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>-p<span class="w"> </span><span class="m">3333</span>:3306<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>-v<span class="w"> </span>/data/mysql/data:/var/lib/mysql<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>fP6QtQ39fqU9eJ8bh9Lpgmqt9yjEg7UUeUw6SnDgeLymjz8rVeUxGw5QQ5yHa3hU<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>mariadb
+</span></code></pre></div>
+<p>来自 <a href="https://www.jianshu.com/p/351b71c3cd5a">https://www.jianshu.com/p/351b71c3cd5a</a></p>
+<h3 id="ip">IP 摄像头</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>--name<span class="o">=</span><span class="s2">&quot;zoneminder&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>--net<span class="o">=</span><span class="s2">&quot;bridge&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>--privileged<span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>--shm-size<span class="o">=</span><span class="s2">&quot;8G&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>--device<span class="o">=</span>/dev/video0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>--device<span class="o">=</span>/dev/video1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>--device<span class="o">=</span>/dev/video2<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>--device<span class="o">=</span>/dev/video3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>-p<span class="w"> </span><span class="m">8443</span>:443/tcp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>-p<span class="w"> </span><span class="m">9001</span>:9000/tcp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&quot;Asia/Shanghai&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>-e<span class="w"> </span><span class="nv">PUID</span><span class="o">=</span><span class="s2">&quot;99&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>-e<span class="w"> </span><span class="nv">PGID</span><span class="o">=</span><span class="s2">&quot;100&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>-e<span class="w"> </span><span class="nv">MULTI_PORT_START</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>-e<span class="w"> </span><span class="nv">MULTI_PORT_END</span><span class="o">=</span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>-v<span class="w"> </span><span class="s2">&quot;/data/zoneminder&quot;</span>:<span class="s2">&quot;/config&quot;</span>:rw<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>-v<span class="w"> </span><span class="s2">&quot;/data/zoneminder/data&quot;</span>:<span class="s2">&quot;/var/cache/zoneminder&quot;</span>:rw<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>dlandon/zoneminder.machine.learning
+</span></code></pre></div>
+<p>来自 <a href="https://post.smzdm.com/p/ag437dqw/">https://post.smzdm.com/p/ag437dqw/</a></p>
+<h3 id="mongodb">MongoDB</h3>
+<p>启动容器，挂载本地目录</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>--name<span class="w"> </span>mongo<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>-p<span class="w"> </span><span class="m">27017</span>:27017<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>-v<span class="w"> </span>/data/mongodb:/data/db<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>mongo:5.0.9
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://www.bbsmax.com/A/LPdoGLM2d3/">https://www.bbsmax.com/A/LPdoGLM2d3/</a></p>
+</blockquote>
+<h3 id="codefever-communiy">CodeFever Communiy</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>--name<span class="w"> </span>codefever<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>-p<span class="w"> </span><span class="m">80</span>:80<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>-p<span class="w"> </span><span class="m">22</span>:22<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>-it<span class="w"> </span>pgyer/codefever-community:latest
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>/usr/sbin/init
+</span></code></pre></div>
+<blockquote>
+<p>服务启动后尝试访问 <code>http://127.0.0.1</code> 或 <code>http://&lt;server ip&gt;</code> 登录<br />
+如果你希望使用 <code>22</code> 端口作为 Git 的 SSH 协议端口，你需要在启动镜像前将宿主系统的 SSH 服务 端口 先修改成其他端口<br />
+如果服务异常你可以登录 Shell 去人工维护，也可以直接重启容器重启服务。<br />
+默认管理员用户: <code>root@codefever.cn</code>, 密码: <code>123456</code>。登录后请修改密码并绑定 MFA 设备。<br />
+来自 <a href="https://github.com/PGYER/codefever/blob/master/doc/zh-cn/installation/install_via_docker.md">https://github.com/PGYER/codefever/blob/master/doc/zh-cn/installation/install_via_docker.md</a>  </p>
+</blockquote>
+<h3 id="gitea">Gitea 代码托管平台</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--privileged<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w"> </span>--name<span class="o">=</span>gitea<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>-p<span class="w"> </span><span class="m">1022</span>:22<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>-p<span class="w"> </span><span class="m">1080</span>:3000<span class="w">  </span><span class="se">\</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>-v<span class="w"> </span>/data/gitea:/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>gitea/gitea:latest
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># 修改密码</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>容器名称或ID<span class="o">]</span><span class="w"> </span>su<span class="w"> </span>git<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;gitea admin user change-password --username [用户名] --password [新密码] --config /data/gitea/conf/app.ini&quot;</span>
+</span></code></pre></div>
+<h3 id="maven-reposilite">Maven 私服 reposilite</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>-v<span class="w"> </span>/data/reposilite:/app/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>dzikoysk/reposilite:nightly
+</span></code></pre></div>
+<blockquote>
+<p>然后 exec 进去生成 token，设置权限为 m 即可</p>
+</blockquote>
+<h3 id="maven">Maven 仓库管理器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>-p<span class="w"> </span><span class="m">2333</span>:80<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>dzikoysk/reposilite:3.0.0-alpha.24
+</span></code></pre></div>
+<h3 id="maven-nexus3">Maven 私服 nexus3</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mkdir<span class="w"> </span>/data/nexus-data<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/nexus-data
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>docker<span class="w"> </span>run<span class="w"> </span>-itd<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>-p<span class="w"> </span><span class="m">8081</span>:8081<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>--name<span class="w"> </span>nexus3<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>-v<span class="w"> </span>/data/nexus-data:/nexus-data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>sonatype/nexus3
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>docker<span class="w"> </span>stop<span class="w"> </span>nexus3<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>nexus3
+</span></code></pre></div>
+<p>来自 <a href="https://www.jianshu.com/p/8b927b9cd5c0">https://www.jianshu.com/p/8b927b9cd5c0</a></p>
+<blockquote>
+<p>几款开源的 maven 私服<br />
+<a href="https://archiva.apache.org/">https://archiva.apache.org/</a><br />
+<a href="https://maven.apache.org/repository-management.html">https://maven.apache.org/repository-management.html</a><br />
+<a href="https://github.com/dzikoysk/reposilite">https://github.com/dzikoysk/reposilite</a><br />
+<a href="https://releases.jfrog.io/artifactory/bintray-artifactory/">https://releases.jfrog.io/artifactory/bintray-artifactory/</a><br />
+<a href="https://github.com/sonatype/nexus-public">https://github.com/sonatype/nexus-public</a><br />
+<a href="https://github.com/apache/archiva">https://github.com/apache/archiva</a><br />
+来自 <a href="https://www.cnblogs.com/rongfengliang/p/15947682.html">https://www.cnblogs.com/rongfengliang/p/15947682.html</a></p>
+</blockquote>
+<h3 id="clash">Clash 服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>--name<span class="o">=</span>clash<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">/config.yaml:/root/.config/clash/config.yaml&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>-p<span class="w"> </span><span class="s2">&quot;7890:7890&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>-p<span class="w"> </span><span class="s2">&quot;9090:9090&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>--restart<span class="o">=</span>unless-stopped<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>dreamacro/clash
+</span></code></pre></div>
+<h3 id="_1">直播推流服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>-p<span class="w"> </span><span class="m">58080</span>:80<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>--name<span class="w"> </span>subweb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>careywong/subweb:latest
+</span></code></pre></div>
+<h3 id="vpn-pptp">VPN-PPTP 服务器</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-ti<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>--net<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>--privileged<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>-p<span class="w"> </span><span class="m">1723</span>:1723<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>-e<span class="w"> </span><span class="nv">client</span><span class="o">=</span>put_username<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>-e<span class="w"> </span><span class="nv">server</span><span class="o">=</span>*<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>-e<span class="w"> </span><span class="nv">password</span><span class="o">=</span>put_password<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>-e<span class="w"> </span><span class="nv">acceptable_local_ip_addresses</span><span class="o">=</span>*<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>mmontagna/docker-vpn-pptp
+</span></code></pre></div>
+<h3 id="cloudreve_1">Cloudreve</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>mkdir<span class="w"> </span>-vp<span class="w"> </span>/cloudreve/<span class="o">{</span>uploads,avatar<span class="o">}</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span>/cloudreve/conf.ini<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span>/cloudreve/cloudreve.db
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>-p<span class="w"> </span><span class="m">5212</span>:5212<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/cloudreve/conf.ini,target<span class="o">=</span>/cloudreve/conf.ini<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/cloudreve/cloudreve.db,target<span class="o">=</span>/cloudreve/cloudreve.db<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>-v<span class="w"> </span>/cloudreve/uploads:/cloudreve/uploads<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>-v<span class="w"> </span>/cloudreve/avatar:/cloudreve/avatar<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>-v<span class="w"> </span>/data:/data<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>cloudreve/cloudreve:latest
+</span></code></pre></div>
+<h3 id="redis">Redis</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>myredis<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>-d<span class="w"> </span>redis<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>--requirepass<span class="w"> </span><span class="s2">&quot;7xbC2AckQFQzF3Ra7kVBKahNzxF6JP6WmnZDD8UW5GyYM9hjWHm5fwPWZsw6c8jygbgFWsVDwunGGuBu&quot;</span>
+</span></code></pre></div>
+<h3 id="wireguard">WireGuard</h3>
+<p>To automatically install &amp; run wg-easy, simply run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span>--name<span class="o">=</span>wg-easy<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">WG_HOST</span><span class="o">=</span>🚨YOUR_SERVER_IP<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">PASSWORD</span><span class="o">=</span>🚨YOUR_ADMIN_PASSWORD<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">  </span>-v<span class="w"> </span>~/.wg-easy:/etc/wireguard<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">51820</span>:51820/udp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">51821</span>:51821/tcp<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">  </span>--cap-add<span class="o">=</span>NET_ADMIN<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">  </span>--cap-add<span class="o">=</span>SYS_MODULE<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="w">  </span>--sysctl<span class="o">=</span><span class="s2">&quot;net.ipv4.conf.all.src_valid_mark=1&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="w">  </span>--sysctl<span class="o">=</span><span class="s2">&quot;net.ipv4.ip_forward=1&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a><span class="w">  </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="w">  </span>weejewel/wg-easy
+</span></code></pre></div>
+<blockquote>
+<p>💡 Replace YOUR_SERVER_IP with your WAN IP, or a Dynamic DNS hostname.<br />
+💡 Replace YOUR_ADMIN_PASSWORD with a password to log in on the Web UI.<br />
+The Web UI will now be available on <a href="http://0.0.0.0:51821">http://0.0.0.0:51821</a>.<br />
+💡 Your configuration files will be saved in ~/.wg-easy<br />
+来自 <a href="https://github.com/WeeJeWel/wg-easy">https://github.com/WeeJeWel/wg-easy</a></p>
+</blockquote>
+<h3 id="rustdesk">RustDesk 自建服务器</h3>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># docker-compose.yaml</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">  </span><span class="nt">hbbs</span><span class="p">:</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hbbs</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rustdesk/rustdesk-server:latest</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hbbs</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/root</span>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;host&quot;</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hbbr</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">  </span><span class="nt">hbbr</span><span class="p">:</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hbbr</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rustdesk/rustdesk-server:latest</span>
+</span><span id="__span-35-17"><a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hbbr</span>
+</span><span id="__span-35-18"><a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+</span><span id="__span-35-19"><a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/root</span>
+</span><span id="__span-35-20"><a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">    </span><span class="nt">network_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;host&quot;</span>
+</span><span id="__span-35-21"><a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>hbbs
+</span></code></pre></div>
+<blockquote>
+<p>开放端口：TCP(21115, 21116, 21117, 21118, 21119) &amp; UDP(21116)<br />
+id 服务器 (hbbs): server_ip<br />
+中续服务器 (hbbr): server_ip:21117  </p>
+</blockquote>
+<h2 id="_2">常规操作</h2>
+<h3 id="_3">网络配置</h3>
+<h4 id="windows">Windows 下各种二进制软件包</h4>
+<p><a href="https://registry.npmmirror.com/binary.html">阿里云二进制镜像站</a></p>
+<h4 id="nodejs">NodeJs</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>npm<span class="w"> </span>--registry<span class="w"> </span>https://registry.npmmirror.com/
+</span></code></pre></div>
+<h4 id="python">Python</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Cli 临时调用 （普通包）</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://mirrors.bfsu.edu.cn/pypi/web/simple
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://mirrors.pku.edu.cn/pypi/web/simple
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="c1"># 前缀在requirements.txt第一行 或 Cli调用 （pytorch包）</span>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>--extra-index-url<span class="w"> </span>https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.html
+</span></code></pre></div>
+<h4 id="conda">Conda</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># 命令行修改配置文件</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+</span></code></pre></div>
+<h4 id="docker_4">Docker</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># 镜像名前缀&lt;不稳定&gt;</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>docker.fxxk.dedyn.io/
+</span></code></pre></div>
+<p>如果你需要使用本地代理服务，请参阅 <a href="https://docs.docker.com/engine/daemon/proxy/#httphttps-proxy">官方文档</a></p>
+<blockquote>
+<p>警告⚠：如果你正在将 <code>Docker守护进程</code> 作为 <code>systemd</code> 服务运行，你应该创建一个 systemd 的 drop-in 文件来设置 Docker 服务的变量。而 <code>不是</code> 修改 daemon.json 或系统/用户的环境变量  </p>
+<p>警告⚠：如果你选择配置本地代理服务，请务必保证服务可用</p>
+</blockquote>
+<h4 id="huggingface">Huggingface</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Linux环境变量</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HF_ENDPOINT</span><span class="o">=</span>https://hf-mirror.com
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="c1"># Windows Powershell环境变量</span>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="nv">$env</span>:HF_ENDPOINT<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://hf-mirror.com&quot;</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="c1"># 非侵入式</span>
+</span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="nv">HF_ENDPOINT</span><span class="o">=</span>https://hf-mirror.com<span class="w"> </span>python<span class="w"> </span>your_script.py
+</span></code></pre></div>
+<h3 id="android">Android 删除应用锁</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>rm<span class="w"> </span>/data/system/access_control.key
+</span></code></pre></div>
+<h3 id="cmd">CMD 启动自启动</h3>
+<div class="language-batch highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">:</span><span class="c1">: 这是一个管理员权限下的cmd命令，请勿在PowerShell中执行</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>reg add <span class="s2">&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor&quot;</span> /v AutoRun /t REG_SZ /d @<span class="se">^%</span>USERPROFILE<span class="se">^%</span>\autorun.cmd<span class="s2">&quot; &quot;</span>2<span class="se">^&gt;</span>NUL /f
+</span></code></pre></div>
+<p>手动在<code>%USERPROFILE%</code>创建<code>autorun.cmd</code>文件，例如配置 fnm(<a href="https://github.com/Schniz/fnm">Fast Node Manager</a>):</p>
+<div class="language-batch highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">@</span><span class="k">echo</span> off
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="p">:</span><span class="c1">: %USERPROFILE%/autorun.cmd</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="p">:</span><span class="c1">: for /F will launch a new instance of cmd so we create a guard to prevent an infnite loop</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="k">if</span> <span class="k">not</span> <span class="k">defined</span> <span class="nv">FNM_AUTORUN_GUARD</span> <span class="p">(</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>    <span class="k">set</span> <span class="s2">&quot;FNM_AUTORUN_GUARD=AutorunGuard&quot;</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>    <span class="k">FOR</span> <span class="k">/f</span> <span class="s2">&quot;tokens=*&quot;</span> <span class="se">%%</span>z <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;fnm env --use-on-cd&#39;</span><span class="p">)</span> <span class="k">DO</span> <span class="k">CALL</span> <span class="se">%%</span>z
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="linux">Linux 修改主机名</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>&lt;hostname&gt;
+</span></code></pre></div>
+<h3 id="_4">程序开机启动</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>dirname<span class="nv">$0</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>crontab<span class="w"> </span>-e
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>@reboot<span class="w"> </span>screen<span class="w"> </span>-dmS<span class="w"> </span>ImageCut<span class="w"> </span>java<span class="w"> </span>-jar<span class="w"> </span>/root/.QQ-Image-Cut-Web/target/ImageCut-0.0.1-SNAPSHOT.jar<span class="w"> </span>--server.port<span class="o">=</span><span class="m">2333</span>
+</span></code></pre></div>
+<p>run server on screen for crontab and auto on boot run  </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>@reboot<span class="w"> </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>yourNameOfTheSession<span class="w"> </span><span class="s2">&quot;your command to run&quot;</span>
+</span></code></pre></div>
+<h3 id="linux_1">Linux 关闭密码登录</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>nano<span class="w"> </span>/etc/ssh/sshd_config
+</span></code></pre></div>
+<p>修改 <code>PasswordAuthentication no</code></p>
+<p><code>no</code>:不使用密码登陆</p>
+<p><code>yes</code>:使用密码登陆</p>
+<p>重启服务 <code>service sshd restart</code></p>
+<h3 id="windows-10-pro">Windows 10 Pro 激活密钥</h3>
+<p><code>8NWCW-Y4HCC-TKDRT-DGRH3-YBH3B</code></p>
+<h3 id="science-connect-internet-sci">Science Connect Internet (SCI)</h3>
+<p>v2_hijkpw</p>
+<p><code>bash &lt;(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_install_v2ray.sh)</code></p>
+<p>v2</p>
+<p><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code></p>
+<p>openvpn</p>
+<p><code>wget https://git.io/vpn -O openvpn-install.sh &amp;&amp; bash openvpn-install.sh</code></p>
+<p>wireguard</p>
+<p><code>wget https://git.io/wireguard -O wireguard-install.sh &amp;&amp; bash wireguard-install.sh</code></p>
+<h3 id="linux_2">Linux 解压缩工具</h3>
+<h4 id="tar">Tar 用法</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="c1"># 压缩当前路径</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>tar<span class="w"> </span>-zcvf<span class="w"> </span>dir.tar.gz<span class="w"> </span>./
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="c1"># 指定路径解压</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>dir.tar.gz<span class="w"> </span>-C<span class="w"> </span>dir/
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a><span class="c1"># 从文件 foo 和 bar 创建归档文件 archive.tar。</span>
+</span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>tar<span class="w"> </span>-cf<span class="w"> </span>archive.tar<span class="w"> </span>foo<span class="w"> </span>bar
+</span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="c1"># 从归档文件 archive.tar 中提取所有文件。</span>
+</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>tar<span class="w"> </span>-xf<span class="w"> </span>archive.tar
+</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a>
+</span><span id="__span-49-11"><a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a>
+</span><span id="__span-49-12"><a id="__codelineno-49-12" name="__codelineno-49-12" href="#__codelineno-49-12"></a><span class="c1"># 参数含义：</span>
+</span><span id="__span-49-13"><a id="__codelineno-49-13" name="__codelineno-49-13" href="#__codelineno-49-13"></a><span class="c1"># -z: 使用gzip压缩格式</span>
+</span><span id="__span-49-14"><a id="__codelineno-49-14" name="__codelineno-49-14" href="#__codelineno-49-14"></a><span class="c1"># -j: 使用bzip2压缩格式</span>
+</span><span id="__span-49-15"><a id="__codelineno-49-15" name="__codelineno-49-15" href="#__codelineno-49-15"></a><span class="c1"># -c: 创建压缩文件</span>
+</span><span id="__span-49-16"><a id="__codelineno-49-16" name="__codelineno-49-16" href="#__codelineno-49-16"></a><span class="c1"># -x: 解压压缩文件</span>
+</span><span id="__span-49-17"><a id="__codelineno-49-17" name="__codelineno-49-17" href="#__codelineno-49-17"></a><span class="c1"># -v: 显示操作过程</span>
+</span><span id="__span-49-18"><a id="__codelineno-49-18" name="__codelineno-49-18" href="#__codelineno-49-18"></a><span class="c1"># -f: 要操作的文件</span>
+</span></code></pre></div>
+<h4 id="7z">7z 用法</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c1"># 安装</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>apt-get<span class="w"> </span>install<span class="w"> </span>p7zip-full
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="c1"># 压缩</span>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>7z<span class="w"> </span>a<span class="w"> </span>-r<span class="w"> </span>dir.7z<span class="w"> </span>dir/
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>
+</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a><span class="c1"># 解压</span>
+</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>7z<span class="w"> </span>x<span class="w"> </span>filename.7z<span class="w"> </span>-o<span class="w"> </span>./files/
+</span></code></pre></div>
+<h4 id="zip">Zip 用法</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c1"># 压缩目录</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>zip<span class="w"> </span>-r<span class="w"> </span>dir1.zip<span class="w"> </span>dir1/
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="c1"># 解压到当前目录下</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>unzip<span class="w"> </span>test.zip
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="c1"># 指定路径解压  </span>
+</span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>unzip<span class="w"> </span>-d<span class="w"> </span>/temp<span class="w"> </span>test.zip
+</span><span id="__span-51-8"><a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="c1"># 解压但不覆盖</span>
+</span><span id="__span-51-9"><a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a>unzip<span class="w"> </span>-n<span class="w"> </span>test.zip
+</span><span id="__span-51-10"><a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a>unzip<span class="w"> </span>-n<span class="w"> </span>-d<span class="w"> </span>/temp<span class="w"> </span>test.zip
+</span><span id="__span-51-11"><a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="c1"># 查看包内文件但不解压</span>
+</span><span id="__span-51-12"><a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a>unzip<span class="w"> </span>-l<span class="w"> </span>test.zip
+</span><span id="__span-51-13"><a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="c1"># 测试压缩包是否损坏</span>
+</span><span id="__span-51-14"><a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a>unzip<span class="w"> </span>-t<span class="w"> </span>test.zip
+</span></code></pre></div>
+<h4 id="zip_1">Zip 文件解压编码问题</h4>
+<p>使用 <code>unar</code> 解压工具，自动处理编码问题</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>apt<span class="w"> </span>install<span class="w"> </span>unar
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>unar<span class="w"> </span>-h
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="c1"># unar v1.10.7 (Nov 29 2023), a tool for extracting the contents of archive files.</span>
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>
+</span><span id="__span-52-6"><a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a><span class="c1"># Usage: unar [options] archive [files ...]</span>
+</span><span id="__span-52-7"><a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>
+</span><span id="__span-52-8"><a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>unar<span class="w"> </span>test.zip
+</span></code></pre></div>
+<hr />
+<p>使用 <a href="https://github.com/ikohara/dpkg-unzip-iconv"><code>unzip编码补丁</code></a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="c1"># 安装</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>yay<span class="w"> </span>-S<span class="w"> </span>unzip-iconv
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a><span class="c1"># 用法</span>
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>unzip<span class="w"> </span>-O<span class="w"> </span>cp936<span class="w"> </span>myzip.zip
+</span></code></pre></div>
+<hr />
+<p>中国国家标准总局发布的中文字符集有<code>GB2312</code>、<code>GBK</code>与<code>GB18030</code>三种： </p>
+<ul>
+<li><code>GB2312</code> 发布于 1980 年，收录汉字 6763 个</li>
+<li><code>GBK</code> 汉字内码扩展规范，发布于 1995 年，收录汉字 21003 个</li>
+<li><code>GB18030</code> 现行版本发布于 2005 年，收录汉字 70244 个</li>
+</ul>
+<blockquote>
+<p><code>GBK</code> 在 IBM 的 Code Page 中的第 936 页，所以也叫 <code>CP936</code></p>
+</blockquote>
+<h3 id="redis_1">Redis 配置持久化</h3>
+<p>RDB 持久化配置</p>
+<p>Redis 会将数据集的快照 dump 到<code>dump.rdb</code>文件中。<br />
+此外，我们也可以通过配置文件来修改 Redis 服务器 dump 快照的频率，</p>
+<p>在打开<code>redis.conf</code>文件之后，我们搜索 save，可以看到下面的配置信息：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>save<span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">1</span><span class="w">              </span><span class="c1">#在900秒(15分钟)之后，如果至少有1个key发生变化，则dump内存快照。</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>save<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">10</span><span class="w">            </span><span class="c1">#在300秒(5分钟)之后，如果至少有10个key发生变化，则dump内存快照。</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>save<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">10000</span><span class="w">        </span><span class="c1">#在60秒(1分钟)之后，如果至少有10000个key发生变化，则dump内存快照。</span>
+</span></code></pre></div>
+<p>关闭方法： <code>save ""</code> 并且删掉持久化文件</p>
+<p>AOF 持久化配置</p>
+<p>在 Redis 的配置文件中存在三种同步方式，它们分别是：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>appendfsync<span class="w"> </span>always<span class="w">     </span><span class="c1">#每次有数据修改发生时都会写入AOF文件。</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>appendfsync<span class="w"> </span>everysec<span class="w">  </span><span class="c1">#每秒钟同步一次，该策略为AOF的缺省策略。</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>appendfsync<span class="w"> </span>no<span class="w">          </span><span class="c1">#从不同步。高效但是数据不会被持久化。</span>
+</span></code></pre></div>
+<p>关闭方法：<code>appendfsync no</code> 并且删掉持久化文件  </p>
+<p>大 于 百 亿 级 别 百 万 · 百 亿 级 别 小 于 百 万 级 别</p>
+<blockquote>
+<p>来自 <a href="https://www.modb.pro/db/192506">https://www.modb.pro/db/192506</a></p>
+</blockquote>
+<h3 id="jvm">JVM 配置</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>wget<span class="w"> </span>https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-fx-jdk17.0.3-linux_x64.tar.gz
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>zulu17.34.19-ca-fx-jdk17.0.3-linux_x64.tar.gz
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>mv<span class="w"> </span>zulu17.34.19-ca-fx-jdk17.0.3-linux_x64<span class="w"> </span>/zulu17
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
+</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>nano<span class="w"> </span>/etc/profile
+</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>
+</span><span id="__span-56-9"><a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/zulu17
+</span><span id="__span-56-10"><a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JRE_HOME</span><span class="o">=</span>/zulu17/jre
+</span><span id="__span-56-11"><a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib
+</span><span id="__span-56-12"><a id="__codelineno-56-12" name="__codelineno-56-12" href="#__codelineno-56-12"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span><span id="__span-56-13"><a id="__codelineno-56-13" name="__codelineno-56-13" href="#__codelineno-56-13"></a>
+</span><span id="__span-56-14"><a id="__codelineno-56-14" name="__codelineno-56-14" href="#__codelineno-56-14"></a><span class="nb">source</span><span class="w"> </span>/etc/profile
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://www.jianshu.com/p/4ae48d996d66">https://www.jianshu.com/p/4ae48d996d66</a></p>
+</blockquote>
+<h3 id="debian">Debian 快速换国内源</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>wget<span class="w"> </span>http://qiniu.xiwen.online/Debian10.list
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>mv<span class="w"> </span>Debian10.list<span class="w"> </span>/etc/apt/sources.list
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://www.jianshu.com/p/b4a792945d99">https://www.jianshu.com/p/b4a792945d99</a></p>
+</blockquote>
+<h3 id="conda-base">Conda 设置自动激活 Base 环境</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c"># 检查当前配置</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="n">conda</span> <span class="n">config</span> <span class="p">-</span><span class="n">-show</span> <span class="n">auto_activate_base</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="c"># 禁用自动激活</span>
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="n">conda</span> <span class="n">config</span> <span class="p">-</span><span class="n">-set</span> <span class="n">auto_activate_base</span> <span class="n">false</span>
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="c"># 手动激活</span>
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="n">conda</span> <span class="n">activate</span> <span class="n">base</span>
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a><span class="c"># 取消激活</span>
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="n">conda</span> <span class="n">deactivate</span>
+</span></code></pre></div>
+<h3 id="powershell">Powershell 批量输出源文件内容</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="p">.</span> <span class="n">-Recurse</span> <span class="n">-Filter</span> <span class="s2">&quot;*.kt&quot;</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;--- Content of file: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span><span class="p">)</span><span class="s2"> ---&quot;</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>    <span class="nb">Get-Content</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span> <span class="n">-Encoding</span> <span class="n">Utf8</span>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="powershell-cmd">Powershell / Cmd 设置环境变量</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="c"># 查看所有环境变量</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="nb">Ls </span><span class="n">env</span><span class="p">:</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="c"># 搜索环境变量</span>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="nb">Ls </span><span class="n">env</span><span class="p">:</span><span class="n">NODE</span><span class="p">*</span>
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="c"># 查看单个环境变量</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a><span class="nv">$env:NODE_ENV</span>
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a><span class="c"># 添加/更新环境变量</span>
+</span><span id="__span-60-11"><a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a><span class="nv">$env:NODE_ENV</span><span class="p">=</span><span class="n">development</span>
+</span><span id="__span-60-12"><a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a>
+</span><span id="__span-60-13"><a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a><span class="c"># 删除环境变量</span>
+</span><span id="__span-60-14"><a id="__codelineno-60-14" name="__codelineno-60-14" href="#__codelineno-60-14"></a><span class="nb">del </span><span class="n">evn</span><span class="p">:</span><span class="n">NODE_ENV</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="c"># cmd设置环境变量</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="c"># 查看所有环境变量</span>
+</span><span id="__span-61-4"><a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="nb">set</span>
+</span><span id="__span-61-5"><a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>
+</span><span id="__span-61-6"><a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="c"># 查看单个环境变量</span>
+</span><span id="__span-61-7"><a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a><span class="nb">set </span><span class="n">NODE_ENV</span>
+</span><span id="__span-61-8"><a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a>
+</span><span id="__span-61-9"><a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a><span class="c"># 添加/更新环境变量</span>
+</span><span id="__span-61-10"><a id="__codelineno-61-10" name="__codelineno-61-10" href="#__codelineno-61-10"></a><span class="nb">set </span><span class="n">NODE_ENV</span><span class="p">=</span><span class="n">development</span>
+</span><span id="__span-61-11"><a id="__codelineno-61-11" name="__codelineno-61-11" href="#__codelineno-61-11"></a>
+</span><span id="__span-61-12"><a id="__codelineno-61-12" name="__codelineno-61-12" href="#__codelineno-61-12"></a><span class="c"># 删除环境变量</span>
+</span><span id="__span-61-13"><a id="__codelineno-61-13" name="__codelineno-61-13" href="#__codelineno-61-13"></a><span class="nb">set </span><span class="n">NODE_ENV</span><span class="p">=</span>
+</span></code></pre></div>
+<h3 id="python-wsgidav">Python wsgidav 安装方法</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pywin32<span class="w"> </span>cheroot<span class="w"> </span>wsgidav
+</span></code></pre></div>
+<p>安装后执行以下命令开启 webdav 文件管理共享服务：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>wsgidav<span class="w"> </span>--host<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="o">=</span><span class="m">233</span><span class="w"> </span>--root<span class="o">=</span>./<span class="w"> </span>--auth<span class="o">=</span>anonymous
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>wsgidav<span class="w"> </span>--host<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="o">=</span><span class="m">233</span><span class="w"> </span>--root<span class="o">=</span>./<span class="w"> </span>--auth<span class="o">=</span>nt
+</span></code></pre></div>
+<h3 id="btop">Btop 安装</h3>
+<p>一款炫酷的性能测试监控分析工具——btop</p>
+<p>安装相关依赖</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>yum<span class="w"> </span>install<span class="w"> </span>coreutils<span class="w"> </span>sed<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>-y
+</span></code></pre></div>
+<p>升级 gcc</p>
+<blockquote>
+<p>centos7 系统，默认安装的 gcc 版本是 4，版本过低，无法编译安装 btop，我们需要升级 gcc 的版本为 10 及以上的版本</p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>yum<span class="w"> </span>install<span class="w"> </span>centos-release-scl<span class="w"> </span>-y
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>yum<span class="w"> </span>install<span class="w"> </span>devtoolset-10<span class="w"> </span>-y
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>scl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>devtoolset-10<span class="w"> </span>bash
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/rh/devtoolset-10/enable&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/profile
+</span></code></pre></div>
+<p>检查当前系统的 gcc 版本，可以看到现在 gcc 的版本为 10</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>gcc<span class="w"> </span>-v
+</span></code></pre></div>
+<p>获取源码安装</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;https://gitee.com/mirrors/btop.git&gt;
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="nb">cd</span><span class="w"> </span>btop
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>
+</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<blockquote>
+<p>(可选) 设置为 root 用户运行<br />
+<code>make setuid</code></p>
+</blockquote>
+<p>卸载</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>make<span class="w"> </span>uninstall
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>make<span class="w"> </span>clean
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>make<span class="w"> </span>distclean
+</span></code></pre></div>
+<h3 id="gui-for-debian">GUI for Debian</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>xfce4<span class="w"> </span>xfce4-goodies<span class="w"> </span>thunar-archive-plugin<span class="w"> </span>-y
+</span></code></pre></div>
+<h3 id="linux_3">Linux 安装中文字体包</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>apt-get<span class="w"> </span>install<span class="w"> </span>fonts-wqy-microhei<span class="w"> </span>fonts-wqy-zenhei
+</span></code></pre></div>
+<h3 id="vnc">VNC 安装</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>apt<span class="w"> </span>install<span class="w"> </span>tightvncserver
+</span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
+</span><span id="__span-71-3"><a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>vncserver
+</span></code></pre></div>
+<h3 id="vnc_1">VNC 共享剪切板</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>apt<span class="w"> </span>install<span class="w"> </span>autocutsel
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>autocutsel<span class="w"> </span>-f
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://superuser.com/questions/507241/how-to-install-gui-for-debian">https://superuser.com/questions/507241/how-to-install-gui-for-debian</a></p>
+</blockquote>
+<h3 id="windows-wlan">Windows 查看已连接过的 wlan 密码</h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="n">netsh</span> <span class="n">wlan</span> <span class="n">show</span> <span class="n">profiles</span>
+</span><span id="__span-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="n">netsh</span> <span class="n">wlan</span> <span class="n">show</span> <span class="n">profile</span> <span class="n">name</span><span class="p">=</span><span class="s2">&quot;Redmi Note 12 Turbo&quot;</span> <span class="n">key</span><span class="p">=</span><span class="nb">clear</span>
+</span></code></pre></div>
+<h3 id="linux_4">Linux 手动同步系统时间</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>date<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>http://s3.amazonaws.com<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Date: &quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{ print $3 &quot; &quot; $5 &quot; &quot; $4 &quot; &quot; $7 &quot; &quot; $6 &quot; GMT&quot;}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://askubuntu.com/questions/429306/ntpdate-no-server-suitable-for-synchronization-found">https://askubuntu.com/questions/429306/ntpdate-no-server-suitable-for-synchronization-found</a></p>
+</blockquote>
+<h3 id="enabling-rsa-key-login">Enabling RSA Key login</h3>
+<blockquote>
+<p>⚠ 警告：此操作为危险操作<br />
+⚠ Warning: This operation is a hazardous action.</p>
+</blockquote>
+<p>Instead of modifying /etc/ssh/sshd_config, which is the default SSH configuration file, we just need to add a /etc/ssh/sshd_config.d/enable_rsa_keys.conf configuration file:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/ssh/sshd_config.d/enable_rsa_keys.conf<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="s">HostKeyAlgorithms +ssh-rsa</span>
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="s">PubkeyAcceptedKeyTypes +ssh-rsa</span>
+</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="s">EOF</span>
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://www.sobyte.net/post/2023-06/debian-enable-ssh-rsa-key/#:~:text=This%20article%20will%20guide%20you%20on%20how%20to,to%20enable%20it%20manually.%20Enabling%20RSA%20Key%20login">https://www.sobyte.net/post/2023-06/debian-enable-ssh-rsa-key/#:~:text=This%20article%20will%20guide%20you%20on%20how%20to,to%20enable%20it%20manually.%20Enabling%20RSA%20Key%20login</a></p>
+</blockquote>
+<h3 id="linux_5">Linux 清空命令日志</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>rm<span class="w">  </span>~/.bash_history<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">history</span><span class="w"> </span>-c
+</span></code></pre></div>
+<blockquote>
+<p>来自 <a href="https://zhuanlan.zhihu.com/p/367623771">https://zhuanlan.zhihu.com/p/367623771</a></p>
+</blockquote>
+<h3 id="linux_6">Linux 移动目录下所有文件到当前目录并清空空文件夹</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>mv<span class="w"> </span>-t<span class="w"> </span>.<span class="w"> </span><span class="p">;</span><span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-empty<span class="w"> </span>-delete
+</span></code></pre></div>
+<h3 id="linux_7">Linux 查找大文件</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="c1"># 大文件</span>
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+800M<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>du<span class="w"> </span>-B<span class="w"> </span>1M<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-30
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a><span class="c1"># 大文件夹</span>
+</span><span id="__span-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a>du<span class="w"> </span>-B<span class="w"> </span>1M<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-30
+</span></code></pre></div>
+<h3 id="apt">APT 更新密钥</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>sudo<span class="w"> </span>apt-key<span class="w"> </span>adv<span class="w"> </span>--refresh-keys<span class="w"> </span>--keyserver<span class="w"> </span>keyserver.ubuntu.com
+</span></code></pre></div>
+<h3 id="linux_8">Linux 输入法配置</h3>
+<blockquote>
+<p>请无脑选择<code>fcitx5</code>，否则你会变得不幸</p>
+</blockquote>
+<p>需要的组件有：<code>fcitx5</code> <code>fcitx5-chinese-addons</code> <code>fcitx5-configtool</code></p>
+<p>openSUSE Tumbleweed 示例 (其他发行版请手动安装上面三个组件)：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>fcitx5
+</span></code></pre></div>
+<p>写环境变量</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>nano<span class="w"> </span>/etc/profile
+</span></code></pre></div>
+<p>将下面代码块添加到末尾</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="c1"># fcitx</span>
+</span><span id="__span-82-2"><a id="__codelineno-82-2" name="__codelineno-82-2" href="#__codelineno-82-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GTK_IM_MODULE</span><span class="o">=</span>fcitx
+</span><span id="__span-82-3"><a id="__codelineno-82-3" name="__codelineno-82-3" href="#__codelineno-82-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
+</span><span id="__span-82-4"><a id="__codelineno-82-4" name="__codelineno-82-4" href="#__codelineno-82-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XMODIFIERS</span><span class="o">=</span><span class="s2">&quot;@im=fcitx&quot;</span>
+</span></code></pre></div>
+<h3 id="openssl111">Openssl111 旧版本安装</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>wget<span class="w"> </span>&lt;https://www.openssl.org/source/openssl-1.1.1o.tar.gz&gt;
+</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>openssl-1.1.1o.tar.gz
+</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="nb">cd</span><span class="w"> </span>openssl-1.1.1o
+</span><span id="__span-83-4"><a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a>./config
+</span><span id="__span-83-5"><a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a>make
+</span><span id="__span-83-6"><a id="__codelineno-83-6" name="__codelineno-83-6" href="#__codelineno-83-6"></a>make<span class="w"> </span><span class="nb">test</span>
+</span><span id="__span-83-7"><a id="__codelineno-83-7" name="__codelineno-83-7" href="#__codelineno-83-7"></a>sudo<span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<h3 id="grubgrand-unified-bootloader">修改 GRUB（GRand Unified Bootloader）的背景</h3>
+<p>要修改 GRUB（GRand Unified Bootloader）的背景，您可以按照以下步骤进行操作：</p>
+<ul>
+<li>
+<p>准备背景图片：首先，准备一张您想要设置为 GRUB 背景的图片。确保图片的分辨率适合您的屏幕分辨率，并将其保存到您选择的位置（例如 <code>/boot/grub/background.png</code>）。</p>
+</li>
+<li>
+<p>编辑 GRUB 配置文件：使用文本编辑器打开 <code>/etc/default/grub</code> 文件。</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/default/grub
+</span></code></pre></div>
+<ul>
+<li>定位到 <code>GRUB_BACKGROUND</code> 行，并将其取消注释（删除行首的 #），然后将路径设置为您保存背景图片的路径。例如：</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="nv">GRUB_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;/boot/grub/background.png&quot;</span>
+</span></code></pre></div>
+<p>如果没有该行，请添加上述行并设置正确的背景图片路径。</p>
+<ul>
+<li>
+<p>保存并关闭文件。</p>
+</li>
+<li>
+<p>重新生成 GRUB 配置文件：运行以下命令以重新生成 GRUB 配置文件：</p>
+</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>sudo<span class="w"> </span>grub-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub/grub.cfg
+</span></code></pre></div>
+<p>这将使用新的背景设置生成新的 GRUB 配置文件。</p>
+<ul>
+<li>重启系统：重启您的计算机以使更改生效。在 GRUB 启动界面上，您应该能够看到新设置的背景图片。</li>
+</ul>
+<blockquote>
+<p>请注意，以上步骤假设您正在使用 GRUB2 版本，并且 /etc/default/grub 文件是默认的配置文件位置。如果您使用的是不同版本的 GRUB 或自定义了配置文件的位置，请相应地调整命令和路径。<br />
+此外，请确保您的背景图片与 GRUB 版本兼容，并遵循适当的图像格式和分辨率要求。某些 GRUB 版本可能对图片格式和大小有限制。<br />
+如有需要，请参考 Arch Linux 的官方文档或 GRUB 的文档以获取更多关于修改 GRUB 背景的详细信息和选项。<br />
+来自 <a href="https://chat.openai.com/c/a82707d9-ad65-453c-8f5d-0e3257f1eb05">https://chat.openai.com/c/a82707d9-ad65-453c-8f5d-0e3257f1eb05</a></p>
+</blockquote>
+<h3 id="visual-studio-code">Visual Studio Code 快捷键</h3>
+<h4 id="linux_9">Linux 版本</h4>
+<p>放大：<code>Ctrl</code> + <code>+</code><br />
+缩小：<code>Ctrl</code> + <code>-</code><br />
+重置缩放：<code>Ctrl</code> + <code>0</code>  </p>
+<blockquote>
+<p>(<code>0</code>是小键盘数字键)</p>
+</blockquote>
+<p>格式化代码：<code>Ctrl</code> + <code>Shift</code> + <code>I</code><br />
+重命名标识符：<code>F2</code></p>
+<h3 id="linux-visual-studio-code">Linux 安装 Visual Studio Code</h3>
+<h4 id="rhel-fedora-centos">基于 RHEL, Fedora, 和 CentOS 的分发</h4>
+<p>我们目前在 yum 存储库中分发稳定的 64 位 VS Code，执行以下脚本将安装密钥和存储库：</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>sudo<span class="w"> </span>rpm<span class="w"> </span>--import<span class="w"> </span>https://packages.microsoft.com/keys/microsoft.asc
+</span><span id="__span-87-2"><a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/yum.repos.d/vscode.repo<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</span></code></pre></div>
+<p>然后更新软件包缓存并使用 dnf 安装软件包（适用于 Fedora 22 及以上版本）:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>dnf<span class="w"> </span>check-update
+</span><span id="__span-88-2"><a id="__codelineno-88-2" name="__codelineno-88-2" href="#__codelineno-88-2"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>code<span class="w"> </span><span class="c1"># or code-insiders</span>
+</span></code></pre></div>
+<blockquote>
+<p>由于手动签名流程和我们用于发布的系统，yum 存储库可能会滞后，无法立即获取 Visual Studio Code 的最新版本。<br />
+原文连接 <a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux</a></p>
+</blockquote>
+<h2 id="_5">杂项</h2>
+<h3 id="_6">电信光猫后门</h3>
+<p>用户名：<code>useradmin</code><br />
+密码：<code>nE7jA%5</code>  </p>
+<h3 id="_7">移动光猫后门</h3>
+<p>用户名：<code>CMCCAdmin</code><br />
+密码：<code>aDm8H%MdA</code>  </p>
+<h3 id="_8">紫轩的便携在线工具</h3>
+<p>核心镜像站 <a href="https://www.fastmirror.net">https://www.fastmirror.net</a><br />
+资源中心 <a href="https://res.fastmirror.net">https://res.fastmirror.net</a><br />
+高速图床 <a href="https://img.fastmirror.net">https://img.fastmirror.net</a><br />
+直链云盘 <a href="https://pan.fastmirror.net">https://pan.fastmirror.net</a><br />
+剪切板 <a href="https://paste.fastmirror.net">https://paste.fastmirror.net</a><br />
+随机密码生成器 <a href="https://pass.fastmirror.net">https://pass.fastmirror.net</a><br />
+Maven 开发镜像 <a href="https://maven.fastmirror.net">https://maven.fastmirror.net</a>  </p>
+<h3 id="_9">在线取真随机数</h3>
+<p><a href="https://www.random.org/passwords/?num=100&amp;len=16&amp;format=plain&amp;rnd=new">https://www.random.org/passwords/?num=100&amp;len=16&amp;format=plain&amp;rnd=new</a></p>
+<h3 id="_10">记忆碎片</h3>
+<p>adduser xrdp ssl-cert</p>
+<p>X79 X66</p>
+<p>c4d3fc1881b02fb5f781a2dc244feead</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>Windows 中存在一些设备命名空间，这些命名空间在作为文件名（不包括文件拓展名）时会导致 Windows 文件流将其当作设备流处理传输和读取数据（实际上并没有提供数据），从而导致 Java 进程卡死进而令服务端崩溃。 
+</span><span id="__span-89-2"><a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a>
+</span><span id="__span-89-3"><a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a>这些设备命名空间是：CON, PRN, AUX, NUL, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, LPT9。实际测试中，只有 CON 在不同设备上可以稳定复现问题（因为 CON 代表 Console Input，在所有设备中均存在，而 COM1 等串口上并不一定存在设备） 
+</span><span id="__span-89-4"><a id="__codelineno-89-4" name="__codelineno-89-4" href="#__codelineno-89-4"></a>
+</span><span id="__span-89-5"><a id="__codelineno-89-5" name="__codelineno-89-5" href="#__codelineno-89-5"></a>对于 Windows 11 操作系统，该问题已得到解决，因此无须特别注意。 
+</span><span id="__span-89-6"><a id="__codelineno-89-6" name="__codelineno-89-6" href="#__codelineno-89-6"></a>
+</span><span id="__span-89-7"><a id="__codelineno-89-7" name="__codelineno-89-7" href="#__codelineno-89-7"></a>为了测试该漏洞是否在您的操作系统上可用，请打开 CMD，输入 type con.yml 查看命令行界面是否卡住（未出现后续回显） 
+</span><span id="__span-89-8"><a id="__codelineno-89-8" name="__codelineno-89-8" href="#__codelineno-89-8"></a>
+</span><span id="__span-89-9"><a id="__codelineno-89-9" name="__codelineno-89-9" href="#__codelineno-89-9"></a>Minecraft 从 1.7.6 开始采用 UUID 而不是玩家 ID 作为玩家数据存储方式，这时，在所有第三方插件和模组均使用 UUID 作为文件名存储玩家 ID 时没有问题；但是，我们不能确保所有第三方插件和模组也这么做了 —— 换言之，存在风险。所以最好的解决方案是让所有服主都注意此类问题。但是事实上您会发现，所有可能通过用户输入内容作为文件名存储的通道都会有此类风险，因此： 
+</span><span id="__span-89-10"><a id="__codelineno-89-10" name="__codelineno-89-10" href="#__codelineno-89-10"></a>
+</span><span id="__span-89-11"><a id="__codelineno-89-11" name="__codelineno-89-11" href="#__codelineno-89-11"></a>对于第三方插件/服主开发者，我们恳请您在支持 UUID 的服务端（1.7.6 及以上）中不要在使用玩家 ID 作为文件名存储数据，而是改用 UUID，并且，请不要直接使用用户输入内容直接作为文件名存储数据。 
+</span><span id="__span-89-12"><a id="__codelineno-89-12" name="__codelineno-89-12" href="#__codelineno-89-12"></a>
+</span><span id="__span-89-13"><a id="__codelineno-89-13" name="__codelineno-89-13" href="#__codelineno-89-13"></a>除此之外，您也可以通过简单的直接封禁这些游戏 ID 来粗暴的解决这个问题，但仍需警惕来自其他来源的用户输入导致的同类问题 
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 Core2002
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.select", "content.tabs.link"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
