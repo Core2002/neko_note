@@ -2,7 +2,7 @@
 
 ## Docker 容器
 
-### Docker安装
+### Docker 安装
 
 一键安装命令：
 
@@ -10,7 +10,7 @@
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
 
-国内版(根据网速任选一段执行)
+国内版 (根据网速任选一段执行)
 
 ```bash
 # 北京外国语大学开源软件镜像站
@@ -18,7 +18,7 @@ export DOWNLOAD_URL="https://mirrors.bfsu.edu.cn/docker-ce"
 curl -fsSL https://raw.githubusercontent.com/docker/docker-install/master/install.sh | sh
 ```
 
-若需要使用GPU，需安装 `container-toolkit` -> [技术文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation)
+若需要使用 GPU，需安装 `container-toolkit` -> [技术文档](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installation)
 
 Installing with Apt
 
@@ -134,7 +134,7 @@ docker run -i -t \
 
 > <https://hub.docker.com/r/continuumio/miniconda3>
 
-### 一键构建Gradle项目
+### 一键构建 Gradle 项目
 
 ```bash
 # 使用Wrapper
@@ -161,7 +161,7 @@ docker run -it \
 > <https://hub.docker.com/r/azul/zulu-openjdk>
 > <https://hub.docker.com/_/gradle>
 
-### Cocechat Server web聊天服务器
+### Cocechat Server web 聊天服务器
 
 ```bash
 docker run -d --restart=always \
@@ -207,7 +207,7 @@ docker run --detach \
   gitlab/gitlab-ce:latest
 ```
 
-### Apache文件服务器
+### Apache 文件服务器
 
 ```bash
 docker run -itd \
@@ -218,7 +218,7 @@ docker run -itd \
  httpd:latest
 ```
 
-### VSCode网页版服务器
+### VSCode 网页版服务器
 
 ```bash
 docker run -d \
@@ -254,7 +254,7 @@ mariadb
 
 来自 <https://www.jianshu.com/p/351b71c3cd5a>
 
-### IP摄像头
+### IP 摄像头
 
 ```bash
 docker run -itd  \
@@ -312,7 +312,7 @@ docker run -d \
 
 > 服务启动后尝试访问 `http://127.0.0.1` 或 `http://<server ip>` 登录  
 > 如果你希望使用 `22` 端口作为 Git 的 SSH 协议端口，你需要在启动镜像前将宿主系统的 SSH 服务 端口 先修改成其他端口  
-> 如果服务异常你可以登录 Shell 去人工维护, 也可以直接重启容器重启服务。  
+> 如果服务异常你可以登录 Shell 去人工维护，也可以直接重启容器重启服务。  
 > 默认管理员用户: `root@codefever.cn`, 密码: `123456`。登录后请修改密码并绑定 MFA 设备。  
 > 来自 <https://github.com/PGYER/codefever/blob/master/doc/zh-cn/installation/install_via_docker.md>  
 
@@ -333,7 +333,7 @@ gitea/gitea:latest
 docker exec -it [容器名称或ID] su git bash -c "gitea admin user change-password --username [用户名] --password [新密码] --config /data/gitea/conf/app.ini"
 ```
 
-### Maven私服 reposilite
+### Maven 私服 reposilite
 
 ```bash
 docker run -itd \
@@ -343,7 +343,7 @@ docker run -itd \
 dzikoysk/reposilite:nightly
 ```
 
-> 然后exec进去生成token，设置权限为m即可
+> 然后 exec 进去生成 token，设置权限为 m 即可
 
 ### Maven 仓库管理器
 
@@ -370,7 +370,7 @@ docker stop nexus3 && docker rm nexus3
 
 来自 <https://www.jianshu.com/p/8b927b9cd5c0>
 
-> 几款开源的maven 私服  
+> 几款开源的 maven 私服  
 > <https://archiva.apache.org/>  
 > <https://maven.apache.org/repository-management.html>  
 > <https://github.com/dzikoysk/reposilite>  
@@ -379,7 +379,7 @@ docker stop nexus3 && docker rm nexus3
 > <https://github.com/apache/archiva>  
 > 来自 <https://www.cnblogs.com/rongfengliang/p/15947682.html>
 
-### Clash服务器
+### Clash 服务器
 
 ```bash
 docker run -d \
@@ -401,7 +401,7 @@ docker run -d \
 careywong/subweb:latest
 ```
 
-### VPN-PPTP服务器
+### VPN-PPTP 服务器
 
 ```bash
 docker run -ti \
@@ -469,7 +469,7 @@ To automatically install & run wg-easy, simply run:
 > 💡 Your configuration files will be saved in ~/.wg-easy  
 > 来自 <https://github.com/WeeJeWel/wg-easy>
 
-### RustDesk自建服务器
+### RustDesk 自建服务器
 
 ```yaml
 # docker-compose.yaml
@@ -501,14 +501,14 @@ docker logs hbbs
 ```
 
 > 开放端口：TCP(21115, 21116, 21117, 21118, 21119) & UDP(21116)  
-> id服务器(hbbs): server_ip  
-> 中续服务器(hbbr): server_ip:21117  
+> id 服务器 (hbbs): server_ip  
+> 中续服务器 (hbbr): server_ip:21117  
 
 ## 常规操作
 
 ### 网络配置
 
-#### Windows下各种二进制软件包
+#### Windows 下各种二进制软件包
 
 [阿里云二进制镜像站](https://registry.npmmirror.com/binary.html)
 
@@ -546,9 +546,9 @@ docker.fxxk.dedyn.io/
 ```
 
 如果你需要使用本地代理服务，请参阅 [官方文档](https://docs.docker.com/engine/daemon/proxy/#httphttps-proxy)
-> 警告⚠： 如果你正在将 `Docker守护进程` 作为 `systemd` 服务运行，你应该创建一个systemd的drop-in文件来设置Docker服务的变量。而 `不是` 修改daemon.json或系统/用户的环境变量  
+> 警告⚠：如果你正在将 `Docker守护进程` 作为 `systemd` 服务运行，你应该创建一个 systemd 的 drop-in 文件来设置 Docker 服务的变量。而 `不是` 修改 daemon.json 或系统/用户的环境变量  
 >
-> 警告⚠： 如果你选择配置本地代理服务，请务必保证服务可用
+> 警告⚠：如果你选择配置本地代理服务，请务必保证服务可用
 
 #### Huggingface
 
@@ -576,7 +576,7 @@ rm /data/system/access_control.key
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d @^%USERPROFILE^%\autorun.cmd" "2^>NUL /f
 ```
 
-手动在`%USERPROFILE%`创建`autorun.cmd`文件，例如配置fnm([Fast Node Manager](https://github.com/Schniz/fnm)):
+手动在`%USERPROFILE%`创建`autorun.cmd`文件，例如配置 fnm([Fast Node Manager](https://github.com/Schniz/fnm)):
 
 ```batch
 @echo off
@@ -703,7 +703,7 @@ unzip -l test.zip
 unzip -t test.zip
 ```
 
-#### Zip文件解压编码问题
+#### Zip 文件解压编码问题
 
 使用 `unar` 解压工具，自动处理编码问题
 
@@ -732,22 +732,22 @@ unzip -O cp936 myzip.zip
 
 ---
 
-中国国家标准总局发布的中文字符集有`GB2312`、`GBK`与`GB18030`三种:  
+中国国家标准总局发布的中文字符集有`GB2312`、`GBK`与`GB18030`三种： 
 
-- `GB2312` 发布于1980年，收录汉字6763个
-- `GBK` 汉字内码扩展规范，发布于1995年，收录汉字21003个
-- `GB18030` 现行版本发布于2005年，收录汉字70244个
+- `GB2312` 发布于 1980 年，收录汉字 6763 个
+- `GBK` 汉字内码扩展规范，发布于 1995 年，收录汉字 21003 个
+- `GB18030` 现行版本发布于 2005 年，收录汉字 70244 个
 
-> `GBK` 在IBM的Code Page中的第936页，所以也叫 `CP936`
+> `GBK` 在 IBM 的 Code Page 中的第 936 页，所以也叫 `CP936`
 
 ### Redis 配置持久化
 
-RDB持久化配置
+RDB 持久化配置
 
-Redis会将数据集的快照dump到`dump.rdb`文件中。  
-此外，我们也可以通过配置文件来修改Redis服务器dump快照的频率，
+Redis 会将数据集的快照 dump 到`dump.rdb`文件中。  
+此外，我们也可以通过配置文件来修改 Redis 服务器 dump 快照的频率，
 
-在打开`redis.conf`文件之后，我们搜索save，可以看到下面的配置信息：
+在打开`redis.conf`文件之后，我们搜索 save，可以看到下面的配置信息：
 
 ```bash
 save 900 1              #在900秒(15分钟)之后，如果至少有1个key发生变化，则dump内存快照。
@@ -757,9 +757,9 @@ save 60 10000        #在60秒(1分钟)之后，如果至少有100
 
 关闭方法： `save ""` 并且删掉持久化文件
 
-AOF持久化配置
+AOF 持久化配置
 
-在Redis的配置文件中存在三种同步方式，它们分别是：
+在 Redis 的配置文件中存在三种同步方式，它们分别是：
 
 ```bash
 appendfsync always     #每次有数据修改发生时都会写入AOF文件。
@@ -794,7 +794,7 @@ source /etc/profile
 
 > 来自 <https://www.jianshu.com/p/4ae48d996d66>
 
-### Debian快速换国内源
+### Debian 快速换国内源
 
 ```bash
 wget http://qiniu.xiwen.online/Debian10.list
@@ -804,7 +804,7 @@ apt update && apt upgrade -y
 
 > 来自 <https://www.jianshu.com/p/b4a792945d99>
 
-### Conda 设置自动激活Base环境
+### Conda 设置自动激活 Base 环境
 
 ```powershell
 # 检查当前配置
@@ -818,7 +818,7 @@ conda activate base
 conda deactivate
 ```
 
-### Powershell批量输出源文件内容
+### Powershell 批量输出源文件内容
 
 ```powershell
 Get-ChildItem -Path . -Recurse -Filter "*.kt" | ForEach-Object {
@@ -869,14 +869,14 @@ set NODE_ENV=
 pip install pywin32 cheroot wsgidav
 ```
 
-安装后执行以下命令开启webdav文件管理共享服务：
+安装后执行以下命令开启 webdav 文件管理共享服务：
 
 ```bash
 wsgidav --host=0.0.0.0 --port=233 --root=./ --auth=anonymous
 wsgidav --host=0.0.0.0 --port=233 --root=./ --auth=nt
 ```
 
-### Btop安装
+### Btop 安装
 
 一款炫酷的性能测试监控分析工具——btop
 
@@ -886,9 +886,9 @@ wsgidav --host=0.0.0.0 --port=233 --root=./ --auth=nt
 yum install coreutils sed git build-essential -y
 ```
 
-升级gcc
+升级 gcc
 
-> centos7系统，默认安装的gcc版本是4，版本过低，无法编译安装btop，我们需要升级gcc的版本为10及以上的版本
+> centos7 系统，默认安装的 gcc 版本是 4，版本过低，无法编译安装 btop，我们需要升级 gcc 的版本为 10 及以上的版本
 
 ```bash
 yum install centos-release-scl -y
@@ -897,7 +897,7 @@ scl enable devtoolset-10 bash
 echo "source /opt/rh/devtoolset-10/enable" >> /etc/profile
 ```
 
-检查当前系统的gcc版本，可以看到现在gcc的版本为10
+检查当前系统的 gcc 版本，可以看到现在 gcc 的版本为 10
 
 ```bash
 gcc -v
@@ -913,7 +913,7 @@ cd btop
 make && make install
 ```
 
-> (可选) 设置为root用户运行  
+> (可选) 设置为 root 用户运行  
 > `make setuid`
 
 卸载
@@ -953,7 +953,7 @@ autocutsel -f
 
 > 来自 <https://superuser.com/questions/507241/how-to-install-gui-for-debian>
 
-### Windows 查看已连接过的wlan密码
+### Windows 查看已连接过的 wlan 密码
 
 ```powershell
 netsh wlan show profiles
@@ -1020,7 +1020,7 @@ sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 需要的组件有：`fcitx5` `fcitx5-chinese-addons` `fcitx5-configtool`
 
-openSUSE Tumbleweed示例 (其他发行版请手动安装上面三个组件)：
+openSUSE Tumbleweed 示例 (其他发行版请手动安装上面三个组件)：
 
 ```bash
 sudo zypper in fcitx5
@@ -1099,12 +1099,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 重置缩放：`Ctrl` + `0`  
 > (`0`是小键盘数字键)
 
-格式化代码: `Ctrl` + `Shift` + `I`  
-重命名标识符: `F2`
+格式化代码：`Ctrl` + `Shift` + `I`  
+重命名标识符：`F2`
 
 ### Linux 安装 Visual Studio Code
 
-#### 基于RHEL, Fedora, 和 CentOS 的分发
+#### 基于 RHEL, Fedora, 和 CentOS 的分发
 
 我们目前在 yum 存储库中分发稳定的 64 位 VS Code，执行以下脚本将安装密钥和存储库：
 
@@ -1143,7 +1143,7 @@ sudo dnf install code # or code-insiders
 直链云盘 <https://pan.fastmirror.net>  
 剪切板 <https://paste.fastmirror.net>  
 随机密码生成器 <https://pass.fastmirror.net>  
-Maven开发镜像 <https://maven.fastmirror.net>  
+Maven 开发镜像 <https://maven.fastmirror.net>  
 
 ### 在线取真随机数
 

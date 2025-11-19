@@ -23,21 +23,21 @@ pip install pnnx
 ./onnx2ncnn facenet_512.tflite.onnx facenet_512.tflite.onnx.ncnn.parm facenet_512.tflite.onnx.ncnn.bin
 ```
 
-## ControlNet插件安装范例
+## ControlNet 插件安装范例
 
-前提：你要将AI绘画的WebUI更新到最新版本
+前提：你要将 AI 绘画的 WebUI 更新到最新版本
 
-将<https://github.com/Mikubill/sd-webui-controlnet>仓库中的内容拉取到WebUI文件目录下extensions文件夹内
+将<https://github.com/Mikubill/sd-webui-controlnet>仓库中的内容拉取到 WebUI 文件目录下 extensions 文件夹内
 
-也可以直接下载zip
+也可以直接下载 zip
 
-下载该网站下的内容<https://huggingface.co/lllyasviel/ControlNet/tree/main/annotator/ckpts>，将其放到插件目录下的annotator下的ckpts目录
+下载该网站下的内容<https://huggingface.co/lllyasviel/ControlNet/tree/main/annotator/ckpts>，将其放到插件目录下的 annotator 下的 ckpts 目录
 
-下载<https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main>下的模型到插件目录下的models目录
+下载<https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main>下的模型到插件目录下的 models 目录
 
-现在你的ControlNet已经安装完毕
+现在你的 ControlNet 已经安装完毕
 
-具体使用教程推荐B站视频<https://www.bilibili.com/video/BV1W>
+具体使用教程推荐 B 站视频<https://www.bilibili.com/video/BV1W>
 
 > 来自 <https://zhuanlan.zhihu.com/p/607139523>  
 

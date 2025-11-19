@@ -4,7 +4,7 @@
 
 ### Maven 配置腾讯云镜像
 
-打开maven的设置文件 `settings.xml` ，配置如下 repository mirror ：
+打开 maven 的设置文件 `settings.xml` ，配置如下 repository mirror：
 
 ```xml
 <mirror>
@@ -83,7 +83,7 @@
 </build>
 ```
 
-### Maven下载源码
+### Maven 下载源码
 
 ```bash
 mvn dependency:resolve -Dclassifier=sources
@@ -114,7 +114,7 @@ mvn dependency:resolve -Dclassifier=sources
 </repository> 
 ```
 
-### Maven添加私服
+### Maven 添加私服
 
 `apache-maven-3.5.0/conf/settings.xml`
 
@@ -333,7 +333,7 @@ jar {
 }
 ```
 
-### Gradle 配置内网maven仓库
+### Gradle 配置内网 maven 仓库
 
 ```gradle
 repositories{ 
@@ -391,7 +391,7 @@ publishing {
 distributionUrl=https\://mirrors.cloud.tencent.com/gradle/gradle-8.7-bin.zip
 ```
 
-### 配置HTTP代理
+### 配置 HTTP 代理
 
 `gradle.propertis`
 
@@ -408,7 +408,7 @@ systemProp.https.proxyPort=20171
 org.gradle.java.home=D:\\_SoftWare_Win\\zulu17.38.21-ca-fx-jdk17.0.5-win_x64
 ```
 
-### Gradle重定向包名
+### Gradle 重定向包名
 
 ```gradle
 relocate("io.vertx", "fun.fifu.biligift.vertx")
@@ -416,7 +416,7 @@ relocate("io.vertx", "fun.fifu.biligift.vertx")
 
 ## Java
 
-### 原生GET请求
+### 原生 GET 请求
 
 ```java
 Scanner s = new Scanner(new URL("https://www.baidu.com").openStream(), "UTF-8"); 
@@ -462,7 +462,7 @@ s.forEachRemaining(System.out::print);
 | （无代号） | 1.1 | API 级别 2 |
 | （无代号） | 1.0 | API 级别 1 |
 
-### JDK版本与类文件版本对照表
+### JDK 版本与类文件版本对照表
 
 | JDK Version | Class File Version |
 |-------------|--------------------|
@@ -494,7 +494,7 @@ s.forEachRemaining(System.out::print);
 
 ## Database
 
-### Windows 批量csv导入
+### Windows 批量 csv 导入
 
 ```cmd
 @echo off 
@@ -507,20 +507,20 @@ pause
 
 ### Mongodb
 
--------------------MongoDB数据导入与导出-------------------
+-------------------MongoDB 数据导入与导出-------------------
 
 ```text
 1、导出工具：mongoexport 
     1、概念： 
-        mongoDB中的mongoexport工具可以把一个collection导出成JSON格式或CSV格式的文件。可以通过参数指定导出的数据项，也可以根据指定的条件导出数据。 
+        mongoDB 中的 mongoexport 工具可以把一个 collection 导出成 JSON 格式或 CSV 格式的文件。可以通过参数指定导出的数据项，也可以根据指定的条件导出数据。 
     2、语法： 
         mongoexport -d dbname -c collectionname -o file --type json/csv -f field 
         参数说明： 
-            -d ：数据库名 
-            -c ：collection名 
-            -o ：输出的文件名 
-            --type ： 输出的格式，默认为json 
-            -f ：输出的字段，如果-type为csv，则需要加上-f "字段名" 
+            -d：数据库名 
+            -c：collection 名 
+            -o：输出的文件名 
+            --type：输出的格式，默认为 json 
+            -f：输出的字段，如果-type 为 csv，则需要加上-f "字段名" 
     3、示例： 
         sudo mongoexport -d mongotest -c users -o /home/python/Desktop/mongoDB/users.json --type json -f  "_id,user_id,user_name,age,status" 
   
@@ -528,12 +528,12 @@ pause
     1、语法： 
         mongoimport -d dbname -c collectionname --file filename --headerline --type json/csv -f field 
         参数说明： 
-            -d ：数据库名 
-            -c ：collection名 
-            --type ：导入的格式默认json 
-            -f ：导入的字段名 
-            --headerline ：如果导入的格式是csv，则可以使用第一行的标题作为导入的字段 
-            --file ：要导入的文件 
+            -d：数据库名 
+            -c：collection 名 
+            --type：导入的格式默认 json 
+            -f：导入的字段名 
+            --headerline：如果导入的格式是 csv，则可以使用第一行的标题作为导入的字段 
+            --file：要导入的文件 
   
     2、示例： 
         sudo mongoimport -d mongotest -c users --file /home/mongodump/articles.json --type json 
@@ -542,30 +542,30 @@ pause
 
 > 来自 <https://www.cnblogs.com/qingtianyu2015/p/5968400.html>  
 
--------------------MongoDB备份与恢复-------------------
+-------------------MongoDB 备份与恢复-------------------
 
 ```text
-1、MongoDB数据库备份 
+1、MongoDB 数据库备份 
     1、语法： 
         mongodump -h dbhost -d dbname -o dbdirectory 
         参数说明： 
-            -h： MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017 
-            -d： 需要备份的数据库实例，例如：test 
-            -o： 备份的数据存放位置，例如：/home/mongodump/，当然该目录需要提前建立，这个目录里面存放该数据库实例的备份数据。 
+            -h：MongDB 所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017 
+            -d：需要备份的数据库实例，例如：test 
+            -o：备份的数据存放位置，例如：/home/mongodump/，当然该目录需要提前建立，这个目录里面存放该数据库实例的备份数据。 
     2、实例： 
         sudo rm -rf /home/momgodump/ 
         sudo mkdir -p /home/momgodump 
         sudo mongodump -h 192.168.17.129:27017 -d itcast -o /home/mongodump/ 
         - 
-2、MongoDB数据库恢复 
+2、MongoDB 数据库恢复 
     1、语法： 
         mongorestore -h dbhost -d dbname --dir dbdirectory 
   
         参数或名： 
-            -h： MongoDB所在服务器地址 
-            -d： 需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如test2 
-            --dir： 备份数据所在位置，例如：/home/mongodump/itcast/ 
-            --drop： 恢复的时候，先删除当前数据，然后恢复备份的数据。就是说，恢复后，备份后添加修改的数据都会被删除，慎用！ 
+            -h：MongoDB 所在服务器地址 
+            -d：需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如 test2 
+            --dir：备份数据所在位置，例如：/home/mongodump/itcast/ 
+            --drop：恢复的时候，先删除当前数据，然后恢复备份的数据。就是说，恢复后，备份后添加修改的数据都会被删除，慎用！ 
     2、实例： 
     mongorestore -h 192.168.17.129:27017 -d itcast_restore --dir /home/mongodump/itcast/ 
  
@@ -714,13 +714,13 @@ sudo rm -r /var/lib/mongodb
 
 ### 编译动态链接库
 
-如果是windows系统，则编译命令为：
+如果是 windows 系统，则编译命令为：
 
 ```powershell
 go build -buildmode=c-shared -o test.dll .\test1.go 
 ```
 
-如果是linux系统，则编译命令为：
+如果是 linux 系统，则编译命令为：
 
 ```bash
 go build -buildmode=c-shared -o libtest.so .\test1.go 
@@ -751,7 +751,7 @@ android:screenOrientation="landscape"
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
 ```
 
-windows修改本地时间
+windows 修改本地时间
 
 ```powershell
 Set-Date "2023-04-11 09:27:20+08:00" 
@@ -760,7 +760,7 @@ w32tm /resync
 
 ## Python
 
-### Python编译可执行文件
+### Python 编译可执行文件
 
 ```bash
 nuitka --standalone --onefile demo.py
@@ -774,7 +774,7 @@ nuitka --standalone --onefile demo.py
 cargo rustc --release -- -C prefer-dynamic 
 ```
 
-需要在Cargo.toml中配置如下内容
+需要在 Cargo.toml 中配置如下内容
 
 ```toml
 [dependencies] 
@@ -796,14 +796,14 @@ std::fs::File::open("test114514.json")
     .unwrap() 
     .read_to_string(&mut json_str) 
     .unwrap(); 
-// 解析json文本为map 
+// 解析 json 文本为 map 
 let mut jmap: HashMap<String, Value> = serde_json::from_str(&json_str).unwrap(); 
 for (k, _) in jmap { 
     println!("k:{}", k) 
 }
 ```
 
-### RUST编写和调用DLL
+### RUST 编写和调用 DLL
 
 1  执行 `cargo new  hellolib --lib` 创建库项目
 
@@ -811,7 +811,7 @@ for (k, _) in jmap {
 
 ```toml
 [lib] 
-name = "myfirst_rust_dll" #生成dll的文件名 
+name = "myfirst_rust_dll" #生成 dll 的文件名 
 crate-type = ["dylib"] 
 ```
 
@@ -861,7 +861,7 @@ fn main() {
 } 
 ```
 
-将`myfirst_rust_dll.dll`复制到`hello`目录下，在VSCode中调试，将输出："`Hello rust dll!`"
+将`myfirst_rust_dll.dll`复制到`hello`目录下，在 VSCode 中调试，将输出："`Hello rust dll!`"
 
 或将`myfirst_rust_dll.dll`复制到`debug`目录下，在控制台中运行`hello.exe` ，也将输出："`Hello rust dll!`"
 
@@ -897,7 +897,7 @@ function SortingByFrequencyAndRemovingDuplicates<T>(arr: T[]): T[] {
 
 ## JavaScript
 
-### 原生js取URL参数
+### 原生 js 取 URL 参数
 
 ```javascript
 function getQueryVariable(variable) 
@@ -914,7 +914,7 @@ function getQueryVariable(variable)
 
 > 来自 <https://www.runoob.com/w3cnote/js-get-url-param.html>  
 
-### NodeJS无视SSL调试项目
+### NodeJS 无视 SSL 调试项目
 
 ```bash
 setNODE_OPTIONS=--openssl-legacy-provider && npm run dev 
@@ -924,7 +924,7 @@ setNODE_OPTIONS=--openssl-legacy-provider && npm run dev
 
 ## Git
 
-### 优雅地查阅git logs
+### 优雅地查阅 git logs
 
 ```bash
 git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all 
@@ -1227,10 +1227,10 @@ public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHan
   TeX Live 是 \LaTeX 的发行版之一。你可以到 \href{https://mirrors.tuna.tsinghua.edu.cn}{清华大学开源软件镜像站} 下载并安装。
   
   \subsection{文档攥写}
-  我已经猜到了你不知道写什么，你可以复刻本文档，起名为hello.tex。
+  我已经猜到了你不知道写什么，你可以复刻本文档，起名为 hello.tex。
   
   \subsection{文档排版}
-  XeTeX是Unicode友好的 \LaTeX 引擎。我们使用 XeLaTeX 编译器排版 \LaTeX 文档。
+  XeTeX 是 Unicode 友好的 \LaTeX 引擎。我们使用 XeLaTeX 编译器排版 \LaTeX 文档。
   
   \subsubsection{可选前置}
   新建 latexmkrc 文件，写入以下配置：
