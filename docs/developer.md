@@ -924,6 +924,36 @@ setNODE_OPTIONS=--openssl-legacy-provider && npm run dev
 
 ## Git
 
+### 批量梳理 commit
+
+#### 批量整理提交作者
+
+```bash
+pip install git-filter-repo
+```
+
+新建文本文件 `mailmap.txt` 内容如下：
+
+```text
+New Name <new@email.com> = Old Name <old@email.com> 
+```
+
+执行映射命令：
+
+```bash
+git filter-repo --mailmap mailmap.txt
+```
+
+#### 批量重新签名
+
+```bash
+git rebase --root --exec 'git commit --amend --no-edit -S'
+```
+
+> --root：从第一个 commit 开始  
+> --exec：对每个 commit 执行命令  
+> -S：使用 GPG 签名  
+
 ### 优雅地查阅 git logs
 
 ```bash
