@@ -1172,3 +1172,96 @@ Minecraft 从 1.7.6 开始采用 UUID 而不是玩家 ID 作为玩家数据存�
 
 除此之外，您也可以通过简单的直接封禁这些游戏 ID 来粗暴的解决这个问题，但仍需警惕来自其他来源的用户输入导致的同类问题 
 ```
+
+### Ubuntu 中文输入法一键脚本
+
+```bash
+#!/usr/bin/env bash
+# =============================================================
+#  中文输入法一键安装脚本 (ibus + libpinyin)
+#  适用于 Ubuntu 24.04 (noble) / GNOME Wayland
+#  用法: bash install-chinese-input.sh
+#  说明: 脚本可重复执行(幂等), 已装好的步骤会自动跳过
+# =============================================================
+
+set -e
+
+# ---------- 0. 检查 root 权限 ----------
+if [ "$EUID" -eq 0 ]; then
+    echo "[错误] 请不要用 root 直接运行, 请用普通用户运行 (脚本内部会请求 sudo)"
+    exit 1
+fi
+
+echo "==> 检查 sudo 权限..."
+if ! sudo -v; then
+    echo "[错误] 无法获取 sudo 权限, 请确认你的用户有 sudo 权限"
+    exit 1
+fi
+
+# ---------- 1. 安装 ibus 中文拼音引擎 ----------
+echo "==> 安装 ibus-libpinyin (智能拼音引擎)..."
+if dpkg -s ibus-libpinyin >/dev/null 2>&1; then
+    echo "    已安装, 跳过"
+else
+    sudo apt-get update
+    sudo apt-get install -y ibus-libpinyin
+    echo "    ibus-libpinyin 安装完成"
+fi
+
+# ---------- 2. 配置 GNOME 输入源 ----------
+echo "==> 配置 GNOME 输入源 (English + Intelligent Pinyin)..."
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'libpinyin')]"
+gsettings set org.freedesktop.ibus.general preload-engines "['libpinyin']"
+echo "    输入源已设置"
+
+# ---------- 3. 写入环境变量 ----------
+echo "==> 写入输入法环境变量 (GTK/QT/XMODIFIERS)..."
+mkdir -p ~/.config/environment.d
+cat > ~/.config/environment.d/99-input-method.conf <<'EOF'
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+EOF
+
+# .profile 中追加(避免重复)
+if ! grep -q "GTK_IM_MODULE=ibus" ~/.profile 2>/dev/null; then
+    cat >> ~/.profile <<'EOF'
+
+# Chinese input method
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+EOF
+fi
+echo "    环境变量已写入"
+
+# ---------- 4. 重启 ibus 使引擎生效 ----------
+echo "==> 重启 ibus 守护进程..."
+ibus restart 2>/dev/null || true
+sleep 2
+
+# ---------- 5. 验证 ----------
+echo "==> 验证安装结果..."
+if ibus list-engine 2>/dev/null | grep -q "libpinyin"; then
+    echo "    [OK] 拼音引擎已注册: $(ibus list-engine 2>/dev/null | grep -A1 'libpinyin -' | head -2 | tail -1)"
+else
+    echo "    [警告] 未检测到 libpinyin 引擎, 请重新登录后再试"
+fi
+echo "    当前输入源: $(gsettings get org.gnome.desktop.input-sources sources)"
+
+# ---------- 6. 使用说明 ----------
+cat <<'EOF'
+
+============================================================
+安装完成!
+============================================================
+最后一步: 请注销当前会话并重新登录(或重启), 环境变量才会生效。
+
+使用方法:
+  1. 按 Super+空格 (或点击顶部栏的键盘图标) 切换
+     "English (US)" 与 "Intelligent Pinyin"
+  2. 输入拼音, 如 "nihao", 按空格键转换为 "你好"
+  3. 拼音引擎内按 Shift 可快速切换中/英文模式
+============================================================
+EOF
+```
