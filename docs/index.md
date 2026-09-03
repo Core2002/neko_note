@@ -1,130 +1,42 @@
-# Introduction
+# Neko Note
 
-## 项目背景
+个人技术笔记，记录平时写代码、折腾服务器时踩过的坑和查过的答案。这个仓库最初只是本地一摞散落的 Markdown，写多了才整理成现在的样子——没有刻意追求体系完整，更像是按主题归档的速查本。内容大多是「当时的我」验证过的结论，可能过时，用到生产环境前请自行确认。
 
-在当今快速发展的技术环境中，IT 专业人员需要掌握广泛的知识和技能，涵盖运维、网络安全、软件开发和人工智能等多个领域。然而，这些知识往往分散在不同的资源中，难以系统地学习和查阅。为了解决这个问题，我们创建了这个项目，旨在构建一个综合性的技术文档库，为 IT 从业者提供一站式的学习和参考平台。
+## 开发笔记
 
-## 项目目标
+覆盖构建工具 (Maven、Gradle 的镜像源、打包、私服配置等)、常用语言速查 (Java、Go、Rust、Python、TypeScript 等)、以及写代码常翻的周边 (Git 批量整理、MongoDB、Flutter、LaTeX)。这类内容篇幅最大，分门别类记在 [developer.md](developer.md)。
 
-本项目的主要目标包括：
+## 运维笔记
 
-1. 整合多个 IT 领域的核心知识，包括但不限于运维、网络安全、软件开发和人工智能。
+装系统、起服务时的场景速查:Docker 下几十种常用服务的一键部署 (GitLab、Gitea、Nexus、Redis、WireGuard、RustDesk、Ollama 等)、npm / pip / conda 等国内镜像源配置、以及 Linux / Windows 的零散维护操作。都在 [operations.md](operations.md)。
 
-2. 提供清晰、结构化的文档，便于用户快速查找和学习所需信息。
+## 安全笔记
 
-3. 建立一个开放的平台，鼓励社区贡献和协作，不断丰富和更新文档内容。
+记录安全工具的使用方式与参考清单:Hydra 爆破 SSH 的命令参数、WLAN 握手包破解流程，以及一份 100 个经典安全工具的功能索引 (Nessus、Wireshark、Metasploit…)。见 [cyber_security.md](cyber_security.md)。
 
-4. 通过 GitHub Pages 实现文档的在线访问，提高可用性和可访问性。
+## AI 笔记
 
-5. 采用现代化的文档工具和流程，确保文档的质量和可维护性。
+AI 应用层的折腾记录：模型格式转换 (TensorFlow → ONNX → NCNN)、Stable Diffusion 的 ControlNet 插件安装，以及调试时保存的提示词示例。如果网络受限，记得先看 [运维笔记里的镜像配置](./operations.md#huggingface)。整理在 [artificial_intelligence.md](artificial_intelligence.md)。
 
-## 技术实现
+## 怎么记、怎么找
 
-本项目使用以下技术栈：
+- 一条经验就是一个小节，直接追加到对应分类文件末尾，不设额外归档结构。
+- 引用外部资料时，统一用引用块把来源链接挂在条目末尾。
+- 高频复用、容易遗忘的命令优先收录，并放成能直接复制的代码块。
+- 想不起来某条在哪时，别翻目录了——用页面右上角的搜索框全文查找更快。
 
-- Markdown: 用于编写所有文档内容
-- MkDocs: 静态站点生成器，用于构建文档网站
-- GitHub Actions: 实现自动化部署流程
-- GitHub Pages: 托管生成的静态网站
+<details>
+<summary>本站是怎么搭的 (点击展开)</summary>
 
-这种技术选择使得项目具有良好的可维护性和可扩展性，同时确保了文档的版本控制和协作编辑。
+内容以 Markdown 存放在 `docs/` 目录，用 **MkDocs + Material 主题**渲染成静态站。push 到仓库后，由 GitHub Actions 里的 `ci.yml` 自动执行 `mkdocs gh-deploy`,构建产物推送到 `gh-pages` 分支，由 GitHub Pages 托管。
 
-## 未来展望
+本地预览：
 
-随着项目的发展，我们计划：
-
-1. 扩展文档覆盖范围，纳入更多前沿技术和实践经验。
-2. 改进文档的交互性和可视化效果，提升用户体验。
-3. 建立社区贡献机制，鼓励更多专业人士参与内容创作和维护。
-4. 开发多语言支持，使文档能够服务于更广泛的全球 IT 社区。
-
-通过不断的迭代和完善，我们相信 Neko Note 将成为 IT 专业人员不可或缺的知识宝库和学习伙伴。
-
-## 项目结构
-
-本项目的目录结构如下：
-
-```text
-neko_note/
-├── docs/
-│   ├── index.md
-│   ├── operations.md  
-│   ├── cyber_security.md
-│   ├── developer.md
-│   └── artificial_intelligence.md
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── mkdocs.yml
-└── README.md
+```bash
+pip install mkdocs-material
+mkdocs serve
 ```
 
-主要文件说明：
+启动后访问 `http://127.0.0.1:8000`,修改内容会实时刷新;确认无误后直接 push，部署会自动完成。
 
-- `docs/`: 存放所有文档内容的目录
-- `docs/index.md`: 文档首页
-- `docs/operations.md`: 运维相关文档  
-- `docs/cyber_security.md`: 网络安全相关文档
-- `docs/developer.md`: 开发相关文档
-- `docs/artificial_intelligence.md`: AI 相关文档
-- `.github/workflows/ci.yml`: GitHub Actions CI 配置文件
-- `mkdocs.yml`: MkDocs 配置文件
-- `README.md`: 项目说明文件
-
-## 文档编写
-
-文档采用 Markdown 格式编写，存放在`docs`目录下。主要包含以下几个部分：
-
-1. 运维文档 (operations.md):
-   - Docker 相关操作
-   - 系统管理
-   - 网络配置等
-
-2. 网络安全文档 (cyber_security.md):  
-   - 渗透测试工具
-   - 安全扫描
-   - 漏洞分析等
-
-3. 开发文档 (developer.md):
-   - 编程语言
-   - 框架使用  
-   - 开发工具等
-
-4. AI 文档 (artificial_intelligence.md):
-   - 机器学习
-   - 深度学习
-   - AI 应用等
-
-编写文档时，请遵循以下规范：
-
-- 使用 `Markdown` 语法
-- 标题使用 `#` 号标记，最多到六级标题
-- 代码块使用 ` ``` ` 标记，并指定语言
-- 适当使用 `列表`、 `表格` 等方式组织内容
-- 添加必要的 `注释` 和 `说明`
-
-## 文档部署
-
-本项目使用 MkDocs 生成静态网站，并通过 GitHub Actions 自动部署到 GitHub Pages。
-
-部署流程如下：
-
-1. 提交代码到 main 分支
-2. GitHub Actions 自动触发 ci.yml 工作流
-3. 安装 Python 环境和 MkDocs
-4. 使用 mkdocs gh-deploy 命令构建并部署网站
-5. 生成的静态文件推送到 gh-pages 分支
-6. GitHub Pages 从 gh-pages 分支提供网站访问
-
-您可以通过 <https://www.fifu.fun/neko_note> 访问生成的文档网站。
-
-## 贡献指南
-
-欢迎提交 Pull Request 来完善文档内容。在贡献时，请注意：
-
-- 遵循现有的文档结构和风格
-- 保持文档的准确性和时效性
-- 添加有价值的内容，避免重复
-- 提交前进行拼写和格式检查
-
-感谢您的贡献！
+</details>
