@@ -571,8 +571,8 @@ rm /data/system/access_control.key
 
 ### NvChad 配置本地 clangd
 
-在小众设备上编写代码，包管理器找不到对应架构的软件包  
-此时就需要使用系统本地的 clangd  
+在一些小众设备上编写 C/C++ 代码，包管理器可能找不到对应架构的 LSP 软件包  
+此时可以指定使用系统本地的 clangd  
 
 ```bash
 nvim ~/.config/nvim/lua/configs/lspconfig.lua
@@ -597,10 +597,9 @@ nvim ~/.config/nvim/lua/plugins/astrolsp.lua
 
 注释行首控制流语句，向 opts 的 servers 新增 "clangd" 后保存重开
 
-
 ### Neovim 系统剪切板互通
 
-Neovim 依赖系统底层的剪贴板工具。你可以在 Neovim 中输入命令 :checkhealth，往下滚动找到 Clipboard (optional) 一项进行检查：
+Neovim 依赖系统底层的剪贴板工具。
 
 - macOS：内置支持，开箱即用（依赖 pbcopy 和 pbpaste）。
 - Windows：内置支持，开箱即用（依赖 win32yank）。
@@ -608,6 +607,26 @@ Neovim 依赖系统底层的剪贴板工具。你可以在 Neovim 中输入命�
 - Linux (Wayland)：需要安装 wl-clipboard。
 - WSL (Windows Subsystem for Linux)：需要安装 win32yank.exe 并将其路径加入 WSL 的环境变量 PATH 中，Neovim 就会自动识别并与 Windows 剪贴板互通。
 
+你也可以在 Neovim 中输入命令 :checkhealth，找到 Clipboard (optional) 一项进行检查。
+
+### Termux 配置 Nerd 字体
+
+```bash
+pkg update && pkg install curl unzip -y
+
+mkdir -p ~/.termux
+
+curl -fL \
+  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip \
+  -o "$TMPDIR/JetBrainsMono.zip"
+
+unzip -o "$TMPDIR/JetBrainsMono.zip" -d "$TMPDIR/JetBrainsMono"
+
+cp "$TMPDIR/JetBrainsMono/JetBrainsMonoNerdFontMono-Regular.ttf" \
+  ~/.termux/font.ttf
+
+termux-reload-settings
+```
 
 ### CMD 启动自启动
 
